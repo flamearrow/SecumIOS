@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>phone</key>
+	<string>Phone</string>
+	<key>login_in_to_continue</key>
+	<string>Log in to continue</string>
+	<key>next</key>
+	<string>NEXT</string>
+	<key>StringKey</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string></string>
+			<key>zero</key>
+			<string></string>
+			<key>one</key>
+			<string></string>
+			<key>two</key>
+			<string></string>
+			<key>few</key>
+			<string></string>
+			<key>many</key>
+			<string></string>
+			<key>other</key>
+			<string></string>
+		</dict>
+	</dict>
+	<key>welcome_to_app</key>
+	<string>Welcome to AI MARS</string>
+	<key>enter_mobile</key>
+	<string>Enter your mobile number</string>
+	<key>we_will_send_otp</key>
+	<string>We will send you verification code</string>
+</dict>
+</plist>

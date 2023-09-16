@@ -14,6 +14,19 @@
 		224BF1482A40E9DB00B097A1 /* SecumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BF1472A40E9DB00B097A1 /* SecumTests.swift */; };
 		224BF1522A40E9DB00B097A1 /* SecumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BF1512A40E9DB00B097A1 /* SecumUITests.swift */; };
 		224BF1542A40E9DB00B097A1 /* SecumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BF1532A40E9DB00B097A1 /* SecumUITestsLaunchTests.swift */; };
+		229291242AAD2F6A000C59FD /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291232AAD2F6A000C59FD /* SplashView.swift */; };
+		229291262AAD346B000C59FD /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291252AAD346B000C59FD /* SampleView.swift */; };
+		2292912B2AAD4635000C59FD /* Color+SecumColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292912A2AAD4635000C59FD /* Color+SecumColors.swift */; };
+		2292912D2AAD4A64000C59FD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292912C2AAD4A64000C59FD /* LoginView.swift */; };
+		2292912F2AAD4B90000C59FD /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292912E2AAD4B90000C59FD /* File.swift */; };
+		229291342AAD52B4000C59FD /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 229291362AAD52B4000C59FD /* Localizable.stringsdict */; };
+		229291392AAEA501000C59FD /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291382AAEA501000C59FD /* PhoneNumberView.swift */; };
+		2292913C2AAEA54D000C59FD /* CPData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292913B2AAEA54D000C59FD /* CPData.swift */; };
+		229291412AAEABA5000C59FD /* CountryNumbers.json in Resources */ = {isa = PBXBuildFile; fileRef = 229291402AAEABA5000C59FD /* CountryNumbers.json */; };
+		229291432AAEAD7D000C59FD /* PhoneNumberCollectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291422AAEAD7D000C59FD /* PhoneNumberCollectorView.swift */; };
+		229291452AAEB353000C59FD /* Views+Secum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291442AAEB353000C59FD /* Views+Secum.swift */; };
+		22F430AB2A492A1C004ED9B1 /* Tora.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F430AA2A492A1C004ED9B1 /* Tora.swift */; };
+		22F430AD2A492D47004ED9B1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F430AC2A492D47004ED9B1 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +57,20 @@
 		224BF14D2A40E9DB00B097A1 /* SecumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		224BF1512A40E9DB00B097A1 /* SecumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecumUITests.swift; sourceTree = "<group>"; };
 		224BF1532A40E9DB00B097A1 /* SecumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		229291232AAD2F6A000C59FD /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		229291252AAD346B000C59FD /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		2292912A2AAD4635000C59FD /* Color+SecumColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+SecumColors.swift"; sourceTree = "<group>"; };
+		2292912C2AAD4A64000C59FD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2292912E2AAD4B90000C59FD /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		229291352AAD52B4000C59FD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
+		229291372AAD52F9000C59FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		229291382AAEA501000C59FD /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
+		2292913B2AAEA54D000C59FD /* CPData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPData.swift; sourceTree = "<group>"; };
+		229291402AAEABA5000C59FD /* CountryNumbers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryNumbers.json; sourceTree = "<group>"; };
+		229291422AAEAD7D000C59FD /* PhoneNumberCollectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCollectorView.swift; sourceTree = "<group>"; };
+		229291442AAEB353000C59FD /* Views+Secum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views+Secum.swift"; sourceTree = "<group>"; };
+		22F430AA2A492A1C004ED9B1 /* Tora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tora.swift; sourceTree = "<group>"; };
+		22F430AC2A492D47004ED9B1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +101,7 @@
 		224BF12A2A40E9D900B097A1 = {
 			isa = PBXGroup;
 			children = (
+				229291362AAD52B4000C59FD /* Localizable.stringsdict */,
 				224BF1352A40E9D900B097A1 /* Secum */,
 				224BF1462A40E9DB00B097A1 /* SecumTests */,
 				224BF1502A40E9DB00B097A1 /* SecumUITests */,
@@ -94,8 +122,10 @@
 		224BF1352A40E9D900B097A1 /* Secum */ = {
 			isa = PBXGroup;
 			children = (
+				2292913A2AAEA544000C59FD /* Data */,
+				229291272AAD4537000C59FD /* UI */,
+				229291222AAD2F00000C59FD /* Views */,
 				224BF1362A40E9D900B097A1 /* SecumApp.swift */,
-				224BF1382A40E9D900B097A1 /* ContentView.swift */,
 				224BF13A2A40E9DB00B097A1 /* Assets.xcassets */,
 				224BF13C2A40E9DB00B097A1 /* Preview Content */,
 			);
@@ -125,6 +155,40 @@
 				224BF1532A40E9DB00B097A1 /* SecumUITestsLaunchTests.swift */,
 			);
 			path = SecumUITests;
+			sourceTree = "<group>";
+		};
+		229291222AAD2F00000C59FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				22F430AC2A492D47004ED9B1 /* MapView.swift */,
+				22F430AA2A492A1C004ED9B1 /* Tora.swift */,
+				224BF1382A40E9D900B097A1 /* ContentView.swift */,
+				229291232AAD2F6A000C59FD /* SplashView.swift */,
+				229291252AAD346B000C59FD /* SampleView.swift */,
+				2292912C2AAD4A64000C59FD /* LoginView.swift */,
+				2292912E2AAD4B90000C59FD /* File.swift */,
+				229291382AAEA501000C59FD /* PhoneNumberView.swift */,
+				229291422AAEAD7D000C59FD /* PhoneNumberCollectorView.swift */,
+				229291442AAEB353000C59FD /* Views+Secum.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		229291272AAD4537000C59FD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2292912A2AAD4635000C59FD /* Color+SecumColors.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2292913A2AAEA544000C59FD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				229291402AAEABA5000C59FD /* CountryNumbers.json */,
+				2292913B2AAEA54D000C59FD /* CPData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +277,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 224BF12A2A40E9D900B097A1;
 			productRefGroup = 224BF1342A40E9D900B097A1 /* Products */;
@@ -232,7 +297,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				224BF13E2A40E9DB00B097A1 /* Preview Assets.xcassets in Resources */,
+				229291412AAEABA5000C59FD /* CountryNumbers.json in Resources */,
 				224BF13B2A40E9DB00B097A1 /* Assets.xcassets in Resources */,
+				229291342AAD52B4000C59FD /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +324,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F430AB2A492A1C004ED9B1 /* Tora.swift in Sources */,
+				2292912B2AAD4635000C59FD /* Color+SecumColors.swift in Sources */,
+				229291432AAEAD7D000C59FD /* PhoneNumberCollectorView.swift in Sources */,
+				22F430AD2A492D47004ED9B1 /* MapView.swift in Sources */,
+				229291242AAD2F6A000C59FD /* SplashView.swift in Sources */,
 				224BF1392A40E9D900B097A1 /* ContentView.swift in Sources */,
+				229291452AAEB353000C59FD /* Views+Secum.swift in Sources */,
+				229291262AAD346B000C59FD /* SampleView.swift in Sources */,
+				2292913C2AAEA54D000C59FD /* CPData.swift in Sources */,
+				229291392AAEA501000C59FD /* PhoneNumberView.swift in Sources */,
+				2292912D2AAD4A64000C59FD /* LoginView.swift in Sources */,
+				2292912F2AAD4B90000C59FD /* File.swift in Sources */,
 				224BF1372A40E9D900B097A1 /* SecumApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +371,18 @@
 			targetProxy = 224BF14E2A40E9DB00B097A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		229291362AAD52B4000C59FD /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				229291352AAD52B4000C59FD /* zh-Hans */,
+				229291372AAD52F9000C59FD /* en */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		224BF1552A40E9DB00B097A1 /* Debug */ = {
@@ -425,6 +515,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,6 +545,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -476,7 +568,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G27RZ32MAP;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = band.mlgb.SecumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,7 +588,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G27RZ32MAP;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = band.mlgb.SecumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,6 +607,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G27RZ32MAP;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = band.mlgb.SecumUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -533,6 +626,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G27RZ32MAP;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = band.mlgb.SecumUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
