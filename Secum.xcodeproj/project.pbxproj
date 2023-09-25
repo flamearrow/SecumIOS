@@ -14,11 +14,15 @@
 		224BF1482A40E9DB00B097A1 /* SecumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BF1472A40E9DB00B097A1 /* SecumTests.swift */; };
 		224BF1522A40E9DB00B097A1 /* SecumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BF1512A40E9DB00B097A1 /* SecumUITests.swift */; };
 		224BF1542A40E9DB00B097A1 /* SecumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BF1532A40E9DB00B097A1 /* SecumUITestsLaunchTests.swift */; };
+		2291660B2AC115E00083625E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2291660A2AC115E00083625E /* Alamofire */; };
+		2291660E2AC118AC0083625E /* SecumAPIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291660D2AC118AC0083625E /* SecumAPIClientProtocol.swift */; };
+		229166102AC119180083625E /* SecumAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291660F2AC119180083625E /* SecumAPIClient.swift */; };
+		229166132AC15FFB0083625E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229166122AC15FFB0083625E /* ContentViewModel.swift */; };
 		229291242AAD2F6A000C59FD /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291232AAD2F6A000C59FD /* SplashView.swift */; };
 		229291262AAD346B000C59FD /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291252AAD346B000C59FD /* SampleView.swift */; };
 		2292912B2AAD4635000C59FD /* Color+SecumColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292912A2AAD4635000C59FD /* Color+SecumColors.swift */; };
 		2292912D2AAD4A64000C59FD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292912C2AAD4A64000C59FD /* LoginView.swift */; };
-		2292912F2AAD4B90000C59FD /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292912E2AAD4B90000C59FD /* File.swift */; };
+		2292912F2AAD4B90000C59FD /* Cathead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292912E2AAD4B90000C59FD /* Cathead.swift */; };
 		229291342AAD52B4000C59FD /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 229291362AAD52B4000C59FD /* Localizable.stringsdict */; };
 		229291392AAEA501000C59FD /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291382AAEA501000C59FD /* PhoneNumberView.swift */; };
 		2292913C2AAEA54D000C59FD /* CPData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292913B2AAEA54D000C59FD /* CPData.swift */; };
@@ -57,11 +61,14 @@
 		224BF14D2A40E9DB00B097A1 /* SecumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		224BF1512A40E9DB00B097A1 /* SecumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecumUITests.swift; sourceTree = "<group>"; };
 		224BF1532A40E9DB00B097A1 /* SecumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2291660D2AC118AC0083625E /* SecumAPIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecumAPIClientProtocol.swift; sourceTree = "<group>"; };
+		2291660F2AC119180083625E /* SecumAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecumAPIClient.swift; sourceTree = "<group>"; };
+		229166122AC15FFB0083625E /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		229291232AAD2F6A000C59FD /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		229291252AAD346B000C59FD /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		2292912A2AAD4635000C59FD /* Color+SecumColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+SecumColors.swift"; sourceTree = "<group>"; };
 		2292912C2AAD4A64000C59FD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		2292912E2AAD4B90000C59FD /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		2292912E2AAD4B90000C59FD /* Cathead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cathead.swift; sourceTree = "<group>"; };
 		229291352AAD52B4000C59FD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
 		229291372AAD52F9000C59FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		229291382AAEA501000C59FD /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
@@ -78,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2291660B2AC115E00083625E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +130,8 @@
 		224BF1352A40E9D900B097A1 /* Secum */ = {
 			isa = PBXGroup;
 			children = (
+				229166112AC158D80083625E /* ViewModels */,
+				2291660C2AC118910083625E /* Network */,
 				2292913A2AAEA544000C59FD /* Data */,
 				229291272AAD4537000C59FD /* UI */,
 				229291222AAD2F00000C59FD /* Views */,
@@ -157,6 +167,23 @@
 			path = SecumUITests;
 			sourceTree = "<group>";
 		};
+		2291660C2AC118910083625E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2291660D2AC118AC0083625E /* SecumAPIClientProtocol.swift */,
+				2291660F2AC119180083625E /* SecumAPIClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		229166112AC158D80083625E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				229166122AC15FFB0083625E /* ContentViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		229291222AAD2F00000C59FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +193,7 @@
 				229291232AAD2F6A000C59FD /* SplashView.swift */,
 				229291252AAD346B000C59FD /* SampleView.swift */,
 				2292912C2AAD4A64000C59FD /* LoginView.swift */,
-				2292912E2AAD4B90000C59FD /* File.swift */,
+				2292912E2AAD4B90000C59FD /* Cathead.swift */,
 				229291382AAEA501000C59FD /* PhoneNumberView.swift */,
 				229291422AAEAD7D000C59FD /* PhoneNumberCollectorView.swift */,
 				229291442AAEB353000C59FD /* Views+Secum.swift */,
@@ -207,6 +234,9 @@
 			dependencies = (
 			);
 			name = Secum;
+			packageProductDependencies = (
+				2291660A2AC115E00083625E /* Alamofire */,
+			);
 			productName = Secum;
 			productReference = 224BF1332A40E9D900B097A1 /* Secum.app */;
 			productType = "com.apple.product-type.application";
@@ -280,6 +310,9 @@
 				"zh-Hans",
 			);
 			mainGroup = 224BF12A2A40E9D900B097A1;
+			packageReferences = (
+				229166092AC115E00083625E /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 224BF1342A40E9D900B097A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -332,11 +365,14 @@
 				224BF1392A40E9D900B097A1 /* ContentView.swift in Sources */,
 				229291452AAEB353000C59FD /* Views+Secum.swift in Sources */,
 				229291262AAD346B000C59FD /* SampleView.swift in Sources */,
+				229166132AC15FFB0083625E /* ContentViewModel.swift in Sources */,
+				229166102AC119180083625E /* SecumAPIClient.swift in Sources */,
 				2292913C2AAEA54D000C59FD /* CPData.swift in Sources */,
 				229291392AAEA501000C59FD /* PhoneNumberView.swift in Sources */,
 				2292912D2AAD4A64000C59FD /* LoginView.swift in Sources */,
-				2292912F2AAD4B90000C59FD /* File.swift in Sources */,
+				2292912F2AAD4B90000C59FD /* Cathead.swift in Sources */,
 				224BF1372A40E9D900B097A1 /* SecumApp.swift in Sources */,
+				2291660E2AC118AC0083625E /* SecumAPIClientProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +713,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		229166092AC115E00083625E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2291660A2AC115E00083625E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 229166092AC115E00083625E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 224BF12B2A40E9D900B097A1 /* Project object */;
 }

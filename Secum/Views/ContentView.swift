@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var shouldShowSplash: Bool = true
+    @ObservedObject var contentViewModel = ContentViewModel()
     
     var body: some View {
-        if(shouldShowSplash) {
-            SecumSplash().onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
-                    // ping and confirm
-                    self.shouldShowSplash = false
-                })
+        switch contentViewModel.state {
+        case .splash:
+            SecumSplash().onAppear() {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                    contentViewModel.tryPing()
+                }
             }
-        } else {
+        case .login:
             LoginView()
+        default:
+            Text("default")
         }
     }
 }
