@@ -15,7 +15,8 @@ import Combine
 final class SecumAPIClient : SecumAPIClientProtocol {
     static let base_url = "https://meichinijiuchiquba.com"
     
-    static let path_ping = "/api/posts/"
+    static let path_ping = base_url.with(path: "/api/posts/")
+    static let path_register_user = base_url.with(path: "/api/users/")
     
     static let debug_access_token = "asdf"
     
@@ -27,7 +28,7 @@ final class SecumAPIClient : SecumAPIClientProtocol {
         ]
         
         return AF.request(
-            SecumAPIClient.base_url.with(path: SecumAPIClient.path_ping),
+            SecumAPIClient.path_ping,
             method: .post,
             headers: headers
         )
@@ -38,8 +39,27 @@ final class SecumAPIClient : SecumAPIClientProtocol {
         .eraseToAnyPublisher()
     }
     
-    func registerUser() {
+    /// phoneNumber needs to be +16314561234
+    func registerUser(phoneNumber: String) -> AnyPublisher<User, AFError> {
+        let headers: HTTPHeaders = [
+            "Content-type": "application/json",
+        ]
         
+        let params: [String: Any] = [
+            "phone" : phoneNumber
+        ]
+        return AF.request(
+            SecumAPIClient.path_register_user,
+            method: .post,
+            parameters: params,
+            encoding: JSONEncoding.default,
+            headers: headers
+        )
+        .validate()
+        .publishDecodable(type: User.self)
+        .value()
+        .receive(on: DispatchQueue.main)
+        .eraseToAnyPublisher()
     }
     
     func requestAccessCode() {

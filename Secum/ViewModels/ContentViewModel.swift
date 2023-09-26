@@ -19,6 +19,7 @@ class ContentViewModel : ObservableObject {
     enum State {
         case splash
         case loading
+        case error
         case login
         case conversationPreview
         case contacts
@@ -35,17 +36,23 @@ class ContentViewModel : ObservableObject {
     
     func tryPing() {
         self.state = .loading
-        
         apiClient.ping()
             .sink { [weak self] receiveCompletion in
-                guard let self = self else {return}
+                guard let self = self else { return }
                 switch receiveCompletion {
-                    case .failure(let error):
-                        print("BGLM - \(error)")
-                    case .finished:
-                        print("BGLM - finished")
+                case .failure(let error):
+                    print("BGLM ping error! - \(error)")
+                    if (error.isResponseValidationError) {
+                        self.state = .login
+                    } else {
+                        self.state = .error
+                    }
+                case .finished:
+                    break
                 }
             } receiveValue: { value in
+                // getProfile and loadBotChat, then set state
+                self.state = .conversationPreview
                 print("BGLM - value: \(String(describing: value))")
             }
             .store(in: &subscriptions) // place holder always required

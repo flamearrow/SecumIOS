@@ -10,8 +10,8 @@ import Combine
 import Alamofire
 
 protocol SecumAPIClientProtocol {
-    func ping() -> AnyPublisher<Data?, AFError> // 1
-    func registerUser() // 7
+    func ping() -> AnyPublisher<Data?, AFError> // 1, done
+    func registerUser(phoneNumber: String) -> AnyPublisher<User, AFError> // 7, done
     func requestAccessCode() // 8
     func getAccessToken() // 6
     func getProfile() // 2

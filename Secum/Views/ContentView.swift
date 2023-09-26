@@ -20,6 +20,8 @@ struct ContentView: View {
             }
         case .login:
             LoginView()
+        case .loading:
+            ProgressView()
         default:
             Text("default")
         }

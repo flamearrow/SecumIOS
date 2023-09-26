@@ -18,6 +18,8 @@
 		2291660E2AC118AC0083625E /* SecumAPIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291660D2AC118AC0083625E /* SecumAPIClientProtocol.swift */; };
 		229166102AC119180083625E /* SecumAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291660F2AC119180083625E /* SecumAPIClient.swift */; };
 		229166132AC15FFB0083625E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229166122AC15FFB0083625E /* ContentViewModel.swift */; };
+		229166152AC2A73D0083625E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229166142AC2A73D0083625E /* LoginViewModel.swift */; };
+		229166182AC2AC630083625E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229166172AC2AC630083625E /* User.swift */; };
 		229291242AAD2F6A000C59FD /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291232AAD2F6A000C59FD /* SplashView.swift */; };
 		229291262AAD346B000C59FD /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291252AAD346B000C59FD /* SampleView.swift */; };
 		2292912B2AAD4635000C59FD /* Color+SecumColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292912A2AAD4635000C59FD /* Color+SecumColors.swift */; };
@@ -64,6 +66,8 @@
 		2291660D2AC118AC0083625E /* SecumAPIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecumAPIClientProtocol.swift; sourceTree = "<group>"; };
 		2291660F2AC119180083625E /* SecumAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecumAPIClient.swift; sourceTree = "<group>"; };
 		229166122AC15FFB0083625E /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		229166142AC2A73D0083625E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		229166172AC2AC630083625E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		229291232AAD2F6A000C59FD /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		229291252AAD346B000C59FD /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		2292912A2AAD4635000C59FD /* Color+SecumColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+SecumColors.swift"; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 		2291660C2AC118910083625E /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				229166162AC2AC550083625E /* Model */,
 				2291660D2AC118AC0083625E /* SecumAPIClientProtocol.swift */,
 				2291660F2AC119180083625E /* SecumAPIClient.swift */,
 			);
@@ -180,8 +185,17 @@
 			isa = PBXGroup;
 			children = (
 				229166122AC15FFB0083625E /* ContentViewModel.swift */,
+				229166142AC2A73D0083625E /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		229166162AC2AC550083625E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				229166172AC2AC630083625E /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		229291222AAD2F00000C59FD /* Views */ = {
@@ -367,9 +381,11 @@
 				229291262AAD346B000C59FD /* SampleView.swift in Sources */,
 				229166132AC15FFB0083625E /* ContentViewModel.swift in Sources */,
 				229166102AC119180083625E /* SecumAPIClient.swift in Sources */,
+				229166152AC2A73D0083625E /* LoginViewModel.swift in Sources */,
 				2292913C2AAEA54D000C59FD /* CPData.swift in Sources */,
 				229291392AAEA501000C59FD /* PhoneNumberView.swift in Sources */,
 				2292912D2AAD4A64000C59FD /* LoginView.swift in Sources */,
+				229166182AC2AC630083625E /* User.swift in Sources */,
 				2292912F2AAD4B90000C59FD /* Cathead.swift in Sources */,
 				224BF1372A40E9D900B097A1 /* SecumApp.swift in Sources */,
 				2291660E2AC118AC0083625E /* SecumAPIClientProtocol.swift in Sources */,
