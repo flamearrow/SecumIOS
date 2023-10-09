@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var contentViewModel = ContentViewModel()
+    @State var otp: String = ""
+    
     
     var body: some View {
         switch contentViewModel.state {
@@ -22,8 +24,10 @@ struct ContentView: View {
             LoginView()
         case .loading:
             ProgressView()
-        default:
-            Text("default")
+        case .error:
+            Text("Error")
+        case .loggedIn:
+            LoggedInView()
         }
     }
 }

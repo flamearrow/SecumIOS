@@ -2,6 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>input_incorrect_otp</key>
+	<string>This is not the verification code we sent, please try again</string>
+	<key>incorrect_otp</key>
+	<string>Incorrect verification code</string>
+	<key>ok</key>
+	<string>OK</string>
+	<key>not_receive_code</key>
+	<string>Didn&apos;t receive any code? [Resend Code](secum://resend_otp)</string>
+	<key>enter_4_digits</key>
+	<string>Enter 4-digit code sent to your phone</string>
+	<key>we_sent_otp_to %@</key>
+	<string>We sent it to the number ending in %@</string>
 	<key>phone</key>
 	<string>Phone</string>
 	<key>login_in_to_continue</key>

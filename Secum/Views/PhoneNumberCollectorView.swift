@@ -42,13 +42,18 @@ struct PhoneNumberCollectorView: View {
                         .foregroundColor(.secondary)
                 }
                 .focused($keyIsFocused)
-                .keyboardType(.numbersAndPunctuation)
+                .keyboardType(.numberPad)
                 .onReceive(Just(mobPhoneNumber)) { _ in
                     applyPatternOnNumbers(&mobPhoneNumber, &phoneNumberIsValid, pattern: countryPattern, replacementCharacter: "#")
                 }
                 .padding(10)
                 .frame(minWidth: 80, minHeight: 47)
                 .background(backgroundColor, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+        }
+        .onChange(of: phoneNumberIsValid) { newValue in
+            if(newValue == true) {
+                hideKeyboard()
+            }
         }
         .sheet(isPresented: $presentSheet) {
             NavigationView {

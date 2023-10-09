@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220DFE512AD38075001FF38F /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE502AD38075001FF38F /* LoadingButton.swift */; };
+		220DFE532AD3964B001FF38F /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE522AD3964B001FF38F /* KeyboardResponder.swift */; };
 		224BF1372A40E9D900B097A1 /* SecumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BF1362A40E9D900B097A1 /* SecumApp.swift */; };
 		224BF1392A40E9D900B097A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BF1382A40E9D900B097A1 /* ContentView.swift */; };
 		224BF13B2A40E9DB00B097A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224BF13A2A40E9DB00B097A1 /* Assets.xcassets */; };
@@ -20,6 +22,11 @@
 		229166132AC15FFB0083625E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229166122AC15FFB0083625E /* ContentViewModel.swift */; };
 		229166152AC2A73D0083625E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229166142AC2A73D0083625E /* LoginViewModel.swift */; };
 		229166182AC2AC630083625E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229166172AC2AC630083625E /* User.swift */; };
+		2291661A2ACA35380083625E /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229166192ACA35380083625E /* LoggedInView.swift */; };
+		2291661C2ACA35AD0083625E /* LoggedInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291661B2ACA35AD0083625E /* LoggedInViewModel.swift */; };
+		2291661E2ACA38320083625E /* AccessCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291661D2ACA38320083625E /* AccessCode.swift */; };
+		229166202ACA41270083625E /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291661F2ACA41270083625E /* AccessToken.swift */; };
+		229166222ACA4E390083625E /* OTPCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229166212ACA4E390083625E /* OTPCollectionView.swift */; };
 		229291242AAD2F6A000C59FD /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291232AAD2F6A000C59FD /* SplashView.swift */; };
 		229291262AAD346B000C59FD /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291252AAD346B000C59FD /* SampleView.swift */; };
 		2292912B2AAD4635000C59FD /* Color+SecumColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292912A2AAD4635000C59FD /* Color+SecumColors.swift */; };
@@ -53,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		220DFE502AD38075001FF38F /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		220DFE522AD3964B001FF38F /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		224BF1332A40E9D900B097A1 /* Secum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Secum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224BF1362A40E9D900B097A1 /* SecumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecumApp.swift; sourceTree = "<group>"; };
 		224BF1382A40E9D900B097A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +77,11 @@
 		229166122AC15FFB0083625E /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		229166142AC2A73D0083625E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		229166172AC2AC630083625E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		229166192ACA35380083625E /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
+		2291661B2ACA35AD0083625E /* LoggedInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewModel.swift; sourceTree = "<group>"; };
+		2291661D2ACA38320083625E /* AccessCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCode.swift; sourceTree = "<group>"; };
+		2291661F2ACA41270083625E /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		229166212ACA4E390083625E /* OTPCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPCollectionView.swift; sourceTree = "<group>"; };
 		229291232AAD2F6A000C59FD /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		229291252AAD346B000C59FD /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		2292912A2AAD4635000C59FD /* Color+SecumColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+SecumColors.swift"; sourceTree = "<group>"; };
@@ -186,6 +200,7 @@
 			children = (
 				229166122AC15FFB0083625E /* ContentViewModel.swift */,
 				229166142AC2A73D0083625E /* LoginViewModel.swift */,
+				2291661B2ACA35AD0083625E /* LoggedInViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -194,6 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				229166172AC2AC630083625E /* User.swift */,
+				2291661D2ACA38320083625E /* AccessCode.swift */,
+				2291661F2ACA41270083625E /* AccessToken.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +228,9 @@
 				229291382AAEA501000C59FD /* PhoneNumberView.swift */,
 				229291422AAEAD7D000C59FD /* PhoneNumberCollectorView.swift */,
 				229291442AAEB353000C59FD /* Views+Secum.swift */,
+				229166192ACA35380083625E /* LoggedInView.swift */,
+				229166212ACA4E390083625E /* OTPCollectionView.swift */,
+				220DFE502AD38075001FF38F /* LoadingButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				2292912A2AAD4635000C59FD /* Color+SecumColors.swift */,
+				220DFE522AD3964B001FF38F /* KeyboardResponder.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -371,24 +392,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220DFE512AD38075001FF38F /* LoadingButton.swift in Sources */,
 				22F430AB2A492A1C004ED9B1 /* Tora.swift in Sources */,
 				2292912B2AAD4635000C59FD /* Color+SecumColors.swift in Sources */,
 				229291432AAEAD7D000C59FD /* PhoneNumberCollectorView.swift in Sources */,
+				2291661C2ACA35AD0083625E /* LoggedInViewModel.swift in Sources */,
 				22F430AD2A492D47004ED9B1 /* MapView.swift in Sources */,
 				229291242AAD2F6A000C59FD /* SplashView.swift in Sources */,
 				224BF1392A40E9D900B097A1 /* ContentView.swift in Sources */,
 				229291452AAEB353000C59FD /* Views+Secum.swift in Sources */,
 				229291262AAD346B000C59FD /* SampleView.swift in Sources */,
 				229166132AC15FFB0083625E /* ContentViewModel.swift in Sources */,
+				229166222ACA4E390083625E /* OTPCollectionView.swift in Sources */,
 				229166102AC119180083625E /* SecumAPIClient.swift in Sources */,
 				229166152AC2A73D0083625E /* LoginViewModel.swift in Sources */,
 				2292913C2AAEA54D000C59FD /* CPData.swift in Sources */,
 				229291392AAEA501000C59FD /* PhoneNumberView.swift in Sources */,
 				2292912D2AAD4A64000C59FD /* LoginView.swift in Sources */,
 				229166182AC2AC630083625E /* User.swift in Sources */,
+				220DFE532AD3964B001FF38F /* KeyboardResponder.swift in Sources */,
+				2291661E2ACA38320083625E /* AccessCode.swift in Sources */,
 				2292912F2AAD4B90000C59FD /* Cathead.swift in Sources */,
+				2291661A2ACA35380083625E /* LoggedInView.swift in Sources */,
 				224BF1372A40E9D900B097A1 /* SecumApp.swift in Sources */,
 				2291660E2AC118AC0083625E /* SecumAPIClientProtocol.swift in Sources */,
+				229166202ACA41270083625E /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,9 +21,7 @@ class ContentViewModel : ObservableObject {
         case loading
         case error
         case login
-        case conversationPreview
-        case contacts
-        case conversationDetail(peerID: String)
+        case loggedIn
     }
     
     private let apiClient : SecumAPIClientProtocol
@@ -41,7 +39,6 @@ class ContentViewModel : ObservableObject {
                 guard let self = self else { return }
                 switch receiveCompletion {
                 case .failure(let error):
-                    print("BGLM ping error! - \(error)")
                     if (error.isResponseValidationError) {
                         self.state = .login
                     } else {
@@ -52,8 +49,7 @@ class ContentViewModel : ObservableObject {
                 }
             } receiveValue: { value in
                 // getProfile and loadBotChat, then set state
-                self.state = .conversationPreview
-                print("BGLM - value: \(String(describing: value))")
+                self.state = .loggedIn
             }
             .store(in: &subscriptions) // place holder always required
     }

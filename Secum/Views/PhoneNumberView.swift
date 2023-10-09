@@ -75,9 +75,6 @@ struct PhoneNumberView: View {
                 Spacer()
                 
             }
-            .onTapGesture {
-                hideKeyboard()
-            }
             .sheet(isPresented: $presentSheet) {
                 NavigationView {
                     List(filteredResorts) { country in
@@ -159,12 +156,6 @@ extension View {
                 self
             }
         }
-}
-extension View {
-    func hideKeyboard() {
-        let resign = #selector(UIResponder.resignFirstResponder)
-        UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
-    }
 }
 struct OnboardingButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
