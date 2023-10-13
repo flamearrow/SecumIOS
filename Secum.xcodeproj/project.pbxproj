@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		220DFE512AD38075001FF38F /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE502AD38075001FF38F /* LoadingButton.swift */; };
 		220DFE532AD3964B001FF38F /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE522AD3964B001FF38F /* KeyboardResponder.swift */; };
+		220DFE562ADA050A001FF38F /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 220DFE552ADA050A001FF38F /* SwiftKeychainWrapper */; };
+		220DFE582ADA0581001FF38F /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE572ADA0581001FF38F /* KeychainHelper.swift */; };
 		224BF1372A40E9D900B097A1 /* SecumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BF1362A40E9D900B097A1 /* SecumApp.swift */; };
 		224BF1392A40E9D900B097A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BF1382A40E9D900B097A1 /* ContentView.swift */; };
 		224BF13B2A40E9DB00B097A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224BF13A2A40E9DB00B097A1 /* Assets.xcassets */; };
@@ -62,6 +64,7 @@
 /* Begin PBXFileReference section */
 		220DFE502AD38075001FF38F /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		220DFE522AD3964B001FF38F /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
+		220DFE572ADA0581001FF38F /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		224BF1332A40E9D900B097A1 /* Secum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Secum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224BF1362A40E9D900B097A1 /* SecumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecumApp.swift; sourceTree = "<group>"; };
 		224BF1382A40E9D900B097A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220DFE562ADA050A001FF38F /* SwiftKeychainWrapper in Frameworks */,
 				2291660B2AC115E00083625E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +253,7 @@
 			children = (
 				229291402AAEABA5000C59FD /* CountryNumbers.json */,
 				2292913B2AAEA54D000C59FD /* CPData.swift */,
+				220DFE572ADA0581001FF38F /* KeychainHelper.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 			name = Secum;
 			packageProductDependencies = (
 				2291660A2AC115E00083625E /* Alamofire */,
+				220DFE552ADA050A001FF38F /* SwiftKeychainWrapper */,
 			);
 			productName = Secum;
 			productReference = 224BF1332A40E9D900B097A1 /* Secum.app */;
@@ -347,6 +353,7 @@
 			mainGroup = 224BF12A2A40E9D900B097A1;
 			packageReferences = (
 				229166092AC115E00083625E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				220DFE542ADA050A001FF38F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = 224BF1342A40E9D900B097A1 /* Products */;
 			projectDirPath = "";
@@ -413,6 +420,7 @@
 				220DFE532AD3964B001FF38F /* KeyboardResponder.swift in Sources */,
 				2291661E2ACA38320083625E /* AccessCode.swift in Sources */,
 				2292912F2AAD4B90000C59FD /* Cathead.swift in Sources */,
+				220DFE582ADA0581001FF38F /* KeychainHelper.swift in Sources */,
 				2291661A2ACA35380083625E /* LoggedInView.swift in Sources */,
 				224BF1372A40E9D900B097A1 /* SecumApp.swift in Sources */,
 				2291660E2AC118AC0083625E /* SecumAPIClientProtocol.swift in Sources */,
@@ -763,6 +771,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		220DFE542ADA050A001FF38F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 		229166092AC115E00083625E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -774,6 +790,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		220DFE552ADA050A001FF38F /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 220DFE542ADA050A001FF38F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
 		2291660A2AC115E00083625E /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 229166092AC115E00083625E /* XCRemoteSwiftPackageReference "Alamofire" */;

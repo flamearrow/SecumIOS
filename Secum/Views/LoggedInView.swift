@@ -25,3 +25,7 @@ struct LoggedInView : View {
         
     }
 }
+
+#Preview {
+    LoggedInView(viewModel: LoggedInViewModel())
+}

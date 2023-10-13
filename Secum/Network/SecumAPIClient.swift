@@ -30,22 +30,6 @@ final class SecumAPIClient : SecumAPIClientProtocol {
         return postUnserialized(
             path: SecumAPIClient.path_ping
         )
-        
-//        let headers: HTTPHeaders = [
-//            "Accept": "application/json",
-//            "Authorization": SecumAPIClient.debug_access_token
-//        ]
-//        
-//        return AF.request(
-//            SecumAPIClient.path_ping,
-//            method: .post,
-//            headers: headers
-//        )
-//        .validate()
-//        .publishUnserialized()
-//        .value()
-//        .receive(on: DispatchQueue.main)
-//        .eraseToAnyPublisher()
     }
     
     /// phoneNumber needs to be +16314561234
@@ -56,26 +40,6 @@ final class SecumAPIClient : SecumAPIClientProtocol {
             params: ["phone" : phoneNumber],
             useAuthorization: false
         )
-        
-//        let headers: HTTPHeaders = [
-//            "Content-type": "application/json",
-//        ]
-//        
-//        let params: [String: Any] = [
-//            "phone" : phoneNumber
-//        ]
-//        return AF.request(
-//            SecumAPIClient.path_register_user,
-//            method: .post,
-//            parameters: params,
-//            encoding: JSONEncoding.default,
-//            headers: headers
-//        )
-//        .validate()
-//        .publishDecodable(type: User.self)
-//        .value()
-//        .receive(on: DispatchQueue.main)
-//        .eraseToAnyPublisher()
     }
     
     // don't need authorization
@@ -83,28 +47,10 @@ final class SecumAPIClient : SecumAPIClientProtocol {
         
         return post(
             path: SecumAPIClient.path_reqesut_access_code,
-            params: ["phone" : phoneNumber]
+            params: ["phone" : phoneNumber],
+            useAuthorization: false
         )
         
-//        let headers: HTTPHeaders = [
-//            "Content-type": "application/json",
-//        ]
-//        
-//        let params: [String: Any] = [
-//            "phone" : phoneNumber
-//        ]
-//        return AF.request(
-//            SecumAPIClient.path_reqesut_access_code,
-//            method: .post,
-//            parameters: params,
-//            encoding: JSONEncoding.default,
-//            headers: headers
-//        )
-//        .validate()
-//        .publishDecodable(type: AccessCode.self)
-//        .value()
-//        .receive(on: DispatchQueue.main)
-//        .eraseToAnyPublisher()
     }
     
     // don't need authorization
@@ -130,6 +76,7 @@ final class SecumAPIClient : SecumAPIClientProtocol {
         .eraseToAnyPublisher()
     }
     
+    
     func getProfile() {
         
     }
@@ -148,13 +95,13 @@ final class SecumAPIClient : SecumAPIClientProtocol {
 }
 
 extension SecumAPIClient {
-    fileprivate func post<Output: Decodable>(path: URLConvertible, params: [String: Any] = [:], useAuthorization: Bool = true) -> AnyPublisher<Output, AFError> {
+    fileprivate func post<Output: Decodable>(path: URLConvertible, params: [String: Any] = [:], useAuthorization: Bool = true, logRaw: Bool = false) -> AnyPublisher<Output, AFError> {
         var headers: HTTPHeaders = [
             "Content-type": "application/json",
         ]
         
         if (useAuthorization) {
-            headers["Authorization"] = getAuthorization()
+            headers["Authorization"] = KeychainHelper.getAccessToken()
         }
         
         
@@ -164,7 +111,13 @@ extension SecumAPIClient {
             parameters: params,
             encoding: JSONEncoding.default,
             headers: headers
-        )
+        ).response { response in
+            if(logRaw) {
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("BGLM - requesting \(path), got Raw Response: \(utf8Text)")
+                }
+            }
+        }
         .validate()
         .publishDecodable(type: Output.self)
         .value()
@@ -172,13 +125,13 @@ extension SecumAPIClient {
         .eraseToAnyPublisher()
     }
     
-    fileprivate func postUnserialized(path: URLConvertible, params: [String: Any] = [:], useAuthorization: Bool = true) -> AnyPublisher<Data?, AFError> {
+    fileprivate func postUnserialized(path: URLConvertible, params: [String: Any] = [:], useAuthorization: Bool = true, logRaw: Bool = false) -> AnyPublisher<Data?, AFError> {
         var headers: HTTPHeaders = [
             "Content-type": "application/json",
         ]
         
         if (useAuthorization) {
-            headers["Authorization"] = getAuthorization()
+            headers["Authorization"] = KeychainHelper.getAccessToken()
         }
         
         
@@ -188,7 +141,13 @@ extension SecumAPIClient {
             parameters: params,
             encoding: JSONEncoding.default,
             headers: headers
-        )
+        ).response { response in
+            if(logRaw) {
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("BGLM - requesting \(path), got Raw Response: \(utf8Text)")
+                }
+            }
+        }
         .validate()
         .publishUnserialized()
         .value()
@@ -196,9 +155,6 @@ extension SecumAPIClient {
         .eraseToAnyPublisher()
     }
     
-    fileprivate func getAuthorization() -> String {
-        return SecumAPIClient.debug_access_token
-    }
 }
 
 extension String {

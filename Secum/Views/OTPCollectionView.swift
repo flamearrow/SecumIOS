@@ -98,11 +98,7 @@ fileprivate extension String {
 }
 
 struct OTPCollectionView_Previews: PreviewProvider {
-    @State static var otp = "" {
-        didSet {
-            print("BGLM: new otp : \(otp)")
-        }
-    }
+    @State static var otp = ""
     static var previews: some View {
         OTPCollectionView(otp: $otp)
     }

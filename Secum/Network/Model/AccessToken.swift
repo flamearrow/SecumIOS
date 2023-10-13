@@ -8,6 +8,6 @@
 import Foundation
 
 struct AccessToken: Codable, Equatable, Hashable {
-    let accessToken: String
+    let access_token: String
 }
 

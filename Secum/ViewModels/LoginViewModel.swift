@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftKeychainWrapper
 
 class LoginViewModel : ObservableObject {
     @Published var state: State = .inputtingPhoneNumber(loading: false) {
@@ -53,7 +54,7 @@ class LoginViewModel : ObservableObject {
                         case .finished:
                             break
                         case .failure(let error):
-                            self.state = .error(reason: "request code error: \(error)")
+                            self.state = .error(reason: "request access code error: \(error)")
                         }
                     } receiveValue: { accessCode in
                         self.phoneNumber = fullPhoneNumber
@@ -78,9 +79,14 @@ class LoginViewModel : ObservableObject {
                 case .finished:
                     break
                 case .failure(let error):
-                    self.state = .error(reason: "request code error: \(error)")
+                    self.state = .error(reason: "get access token error: \(error)")
                 }
             } receiveValue: { accessToken in
+                guard KeychainHelper.saveAccessToken(accessToken: accessToken.access_token) == true
+                else{
+                    self.state = .error(reason: "failed to write token")
+                    return
+                }
                 self.state = .gotAccessToken
             }
             .store(in: &self.subscriptions)
