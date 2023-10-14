@@ -32,7 +32,7 @@ class LoginViewModel : ObservableObject {
     }
     
     init() {
-        self.apiClient = SecumAPIClient()
+        self.apiClient = SecumAPIClient.shared
     }
     
     func registerUserAndRequestAccessCode(fullPhoneNumber: String) {

@@ -15,12 +15,18 @@ struct LoggedInView : View {
     var body: some View {
         
         switch viewModel.state {
+        case .loadding:
+            ProgressView().onAppear{
+                viewModel.initializeUser()
+            }
         case .conversationPreview:
             Text("ConversationPreview")
         case .contacts:
             Text("Contacts")
         case .conversationDetail(let peerId):
             Text("ConversationDetail with peerId: \(peerId)")
+        case .error(let reason):
+            Text("Error! \(reason)")
         }
         
     }

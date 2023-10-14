@@ -11,6 +11,7 @@
 		220DFE532AD3964B001FF38F /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE522AD3964B001FF38F /* KeyboardResponder.swift */; };
 		220DFE562ADA050A001FF38F /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 220DFE552ADA050A001FF38F /* SwiftKeychainWrapper */; };
 		220DFE582ADA0581001FF38F /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE572ADA0581001FF38F /* KeychainHelper.swift */; };
+		220DFE5A2ADA1468001FF38F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE592ADA1468001FF38F /* Profile.swift */; };
 		224BF1372A40E9D900B097A1 /* SecumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BF1362A40E9D900B097A1 /* SecumApp.swift */; };
 		224BF1392A40E9D900B097A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BF1382A40E9D900B097A1 /* ContentView.swift */; };
 		224BF13B2A40E9DB00B097A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224BF13A2A40E9DB00B097A1 /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		220DFE502AD38075001FF38F /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		220DFE522AD3964B001FF38F /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		220DFE572ADA0581001FF38F /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		220DFE592ADA1468001FF38F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		224BF1332A40E9D900B097A1 /* Secum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Secum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224BF1362A40E9D900B097A1 /* SecumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecumApp.swift; sourceTree = "<group>"; };
 		224BF1382A40E9D900B097A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				229166172AC2AC630083625E /* User.swift */,
 				2291661D2ACA38320083625E /* AccessCode.swift */,
 				2291661F2ACA41270083625E /* AccessToken.swift */,
+				220DFE592ADA1468001FF38F /* Profile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				2291661A2ACA35380083625E /* LoggedInView.swift in Sources */,
 				224BF1372A40E9D900B097A1 /* SecumApp.swift in Sources */,
 				2291660E2AC118AC0083625E /* SecumAPIClientProtocol.swift in Sources */,
+				220DFE5A2ADA1468001FF38F /* Profile.swift in Sources */,
 				229166202ACA41270083625E /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

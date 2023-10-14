@@ -13,6 +13,11 @@ import Combine
 
 
 final class SecumAPIClient : SecumAPIClientProtocol {
+    
+    static let shared = SecumAPIClient()
+    
+    static let logRaw: Bool = false
+    
     static let base_url = "https://meichinijiuchiquba.com"
     static let username = "AlRYzmz0UoFeByEsbo31OejN55prHGNcX6wBAo5Y"
     static let password = "mcMdd8CZQvoJBE2CuSehkrLbkDfOv2LpPOThzC4VFXvruRfEMoBW2dyT57fy9o19yRAYQt9CVuHE11KsIWPDifYQHzmhn8zKcI6GEy8LAirJrz1VBaIrYVixrCogU4Xg"
@@ -22,6 +27,8 @@ final class SecumAPIClient : SecumAPIClientProtocol {
     static let path_register_user = base_url.with(path: "/api/users/")
     static let path_reqesut_access_code = base_url.with(path: "/api/users/get_access_code/")
     static let path_reqesut_access_token = base_url.with(path: "/api/o/token/")
+    static let path_get_profile = base_url.with(path: "/api/users/get_profile/")
+    static let path_load_bot_chats = base_url.with(path: "/api/users/load_bot_chats/")
     
     static let debug_access_token = "asdf"
     
@@ -68,7 +75,13 @@ final class SecumAPIClient : SecumAPIClientProtocol {
             headers: [
                 .authorization(username: SecumAPIClient.username, password: SecumAPIClient.password)
             ]
-        )
+        ).response { response in
+            if(SecumAPIClient.logRaw) {
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("BGLM - requesting \(SecumAPIClient.path_reqesut_access_token), got Raw Response: \(utf8Text)")
+                }
+            }
+        }
         .validate()
         .publishDecodable(type: AccessToken.self)
         .value()
@@ -77,12 +90,16 @@ final class SecumAPIClient : SecumAPIClientProtocol {
     }
     
     
-    func getProfile() {
-        
+    func getProfile() -> AnyPublisher<Profile, AFError>  {
+        return get(
+            path: SecumAPIClient.path_get_profile
+        )
     }
     
-    func loadBotChats() {
-        
+    func loadBotChats() -> AnyPublisher<Data?, AFError> {
+        return postUnserialized(
+            path: SecumAPIClient.path_load_bot_chats
+        )
     }
     
     func listContacts() {
@@ -95,7 +112,7 @@ final class SecumAPIClient : SecumAPIClientProtocol {
 }
 
 extension SecumAPIClient {
-    fileprivate func post<Output: Decodable>(path: URLConvertible, params: [String: Any] = [:], useAuthorization: Bool = true, logRaw: Bool = false) -> AnyPublisher<Output, AFError> {
+    fileprivate func post<Output: Decodable>(path: URLConvertible, params: [String: Any] = [:], useAuthorization: Bool = true) -> AnyPublisher<Output, AFError> {
         var headers: HTTPHeaders = [
             "Content-type": "application/json",
         ]
@@ -112,7 +129,7 @@ extension SecumAPIClient {
             encoding: JSONEncoding.default,
             headers: headers
         ).response { response in
-            if(logRaw) {
+            if(SecumAPIClient.logRaw) {
                 if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                     print("BGLM - requesting \(path), got Raw Response: \(utf8Text)")
                 }
@@ -125,7 +142,37 @@ extension SecumAPIClient {
         .eraseToAnyPublisher()
     }
     
-    fileprivate func postUnserialized(path: URLConvertible, params: [String: Any] = [:], useAuthorization: Bool = true, logRaw: Bool = false) -> AnyPublisher<Data?, AFError> {
+    
+    fileprivate func get<Output: Decodable>(path: URLConvertible, useAuthorization: Bool = true) -> AnyPublisher<Output, AFError> {
+        var headers: HTTPHeaders = [
+            "Content-type": "application/json",
+        ]
+        
+        if (useAuthorization) {
+            headers["Authorization"] = KeychainHelper.getAccessToken()
+        }
+        
+        
+        return AF.request(
+            path,
+            method: .get,
+            encoding: JSONEncoding.default,
+            headers: headers
+        ).response { response in
+            if(SecumAPIClient.logRaw) {
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("BGLM - requesting \(path), got Raw Response: \(utf8Text)")
+                }
+            }
+        }
+        .validate()
+        .publishDecodable(type: Output.self)
+        .value()
+        .receive(on: DispatchQueue.main)
+        .eraseToAnyPublisher()
+    }
+    
+    fileprivate func postUnserialized(path: URLConvertible, params: [String: Any] = [:], useAuthorization: Bool = true) -> AnyPublisher<Data?, AFError> {
         var headers: HTTPHeaders = [
             "Content-type": "application/json",
         ]
@@ -142,7 +189,7 @@ extension SecumAPIClient {
             encoding: JSONEncoding.default,
             headers: headers
         ).response { response in
-            if(logRaw) {
+            if(SecumAPIClient.logRaw) {
                 if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                     print("BGLM - requesting \(path), got Raw Response: \(utf8Text)")
                 }
