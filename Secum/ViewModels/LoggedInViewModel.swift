@@ -11,9 +11,7 @@ import Combine
 class LoggedInViewModel : ObservableObject {
     @Published var state: State = .loadding {
         didSet {
-            if state == State.conversationPreview {
-                print("BGLM - conversationPreview: curentuser: \(currentUser)")
-            }
+            print("\(LogConstants.secumState) - LoggedInViewModel state changed to \(state)")
         }
     }
     
@@ -36,35 +34,13 @@ class LoggedInViewModel : ObservableObject {
     // getProfile, then load bots
     func initializeUser() {
         apiClient.getProfile()
-            .sink { [weak self] receiveCompletion in
-                switch receiveCompletion {
-                case .failure(let error):
-                    self?.state = .error(reason: "get profile error: \(error)")
-                case .finished:
-                    break
-                }
-            } receiveValue: {[weak self] profile in
-                guard let self = self else { return }
+            .flatMap { profile in
                 self.currentUser = profile.userInfo
-                
-                self.apiClient.loadBotChats()
-                    .sink{ [weak self] receiveCompletion in
-                        switch receiveCompletion {
-                        case .failure(let error):
-                            self?.state = .error(reason: "load bot chats error: \(error)")
-                        case .finished:
-                            break
-                        }
-                    } receiveValue: { _ in
-                        self.state = .conversationPreview
-                    }.store(in: &subscriptions)
-                
-            }.store(in: &subscriptions)
-        
+                return self.apiClient.loadBotChats()
+            }.subscribeWithHanlders(cancellables: &subscriptions, onError: { error in
+                self.state = .error(reason: "get profile or loadBotChats error: \(error)")
+            }) { _ in
+                self.state = .conversationPreview
+            }
     }
-    
-    
-    
-    
-    
 }

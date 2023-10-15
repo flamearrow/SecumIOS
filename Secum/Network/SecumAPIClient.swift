@@ -78,7 +78,7 @@ final class SecumAPIClient : SecumAPIClientProtocol {
         ).response { response in
             if(SecumAPIClient.logRaw) {
                 if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                    print("BGLM - requesting \(SecumAPIClient.path_reqesut_access_token), got Raw Response: \(utf8Text)")
+                    print("\(LogConstants.secumAPIClient) - requesting \(SecumAPIClient.path_reqesut_access_token), got Raw Response: \(utf8Text)")
                 }
             }
         }
@@ -131,7 +131,7 @@ extension SecumAPIClient {
         ).response { response in
             if(SecumAPIClient.logRaw) {
                 if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                    print("BGLM - requesting \(path), got Raw Response: \(utf8Text)")
+                    print("\(LogConstants.secumAPIClient) - requesting \(path), got Raw Response: \(utf8Text)")
                 }
             }
         }
@@ -161,7 +161,7 @@ extension SecumAPIClient {
         ).response { response in
             if(SecumAPIClient.logRaw) {
                 if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                    print("BGLM - requesting \(path), got Raw Response: \(utf8Text)")
+                    print("\(LogConstants.secumAPIClient) - requesting \(path), got Raw Response: \(utf8Text)")
                 }
             }
         }
@@ -191,7 +191,7 @@ extension SecumAPIClient {
         ).response { response in
             if(SecumAPIClient.logRaw) {
                 if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                    print("BGLM - requesting \(path), got Raw Response: \(utf8Text)")
+                    print("\(LogConstants.secumAPIClient) - requesting \(path), got Raw Response: \(utf8Text)")
                 }
             }
         }

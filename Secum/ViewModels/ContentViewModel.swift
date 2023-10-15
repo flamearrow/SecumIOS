@@ -12,7 +12,7 @@ class ContentViewModel : ObservableObject {
     @Published var phoneNumber = ""
     @Published var state: State = .splash {
         didSet {
-            print("BGLM - state changed to \(state)")
+            print("\(LogConstants.secumState) - ContentViewModel state changed to \(state)")
         }
     }
     
@@ -33,25 +33,15 @@ class ContentViewModel : ObservableObject {
     }
     
     func tryPing() {
-        self.state = .loading
         apiClient.ping()
-            .sink { [weak self] receiveCompletion in
-                guard let self = self else { return }
-                switch receiveCompletion {
-                case .failure(let error):
-                    if (error.isResponseValidationError) {
-                        self.state = .login
-                    } else {
-                        self.state = .error
-                    }
-                case .finished:
-                    break
+            .subscribeWithHanlders(cancellables: &subscriptions, onError: { error in
+                if (error.isResponseValidationError) {
+                    self.state = .login
+                } else {
+                    self.state = .error
                 }
-            } receiveValue: { value in
-                // getProfile and loadBotChat, then set state
+            }) { _ in
                 self.state = .loggedIn
             }
-            .store(in: &subscriptions) // place holder always required
     }
-    
 }

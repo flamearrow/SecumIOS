@@ -12,7 +12,7 @@ import SwiftKeychainWrapper
 class LoginViewModel : ObservableObject {
     @Published var state: State = .inputtingPhoneNumber(loading: false) {
         didSet {
-            print("BGLM - state just changed to \(state)")
+            print("\(LogConstants.secumState) - LoginViewModel state changed to \(state)")
         }
     }
     @Published var phoneNumerIsValid : Bool = false
@@ -38,32 +38,17 @@ class LoginViewModel : ObservableObject {
     func registerUserAndRequestAccessCode(fullPhoneNumber: String) {
         self.state = .inputtingPhoneNumber(loading: true)
         apiClient.registerUser(phoneNumber: fullPhoneNumber)
-            .sink { [weak self] receiveCompletion in
-                guard let self = self else { return }
-                switch receiveCompletion {
-                case .failure(let error):
-                    self.state = .error(reason: "register user error: \(error)")
-                case .finished:
-                    break
-                }
-            } receiveValue: { user in
-                self.apiClient.requestAccessCode(phoneNumber: fullPhoneNumber)
-                    .sink { [weak self] receiveCompletion in
-                        guard let self = self else { return }
-                        switch receiveCompletion {
-                        case .finished:
-                            break
-                        case .failure(let error):
-                            self.state = .error(reason: "request access code error: \(error)")
-                        }
-                    } receiveValue: { accessCode in
-                        self.phoneNumber = fullPhoneNumber
-                        self.otp = accessCode
-                        self.state = .inputtingAccessCode(phoneNumber: fullPhoneNumber, loading: false)
-                    }
-                    .store(in: &self.subscriptions)
+            .flatMap { _ in
+                // no need to save user, will get through Profile in LoggedInView
+                return self.apiClient.requestAccessCode(phoneNumber: fullPhoneNumber)
             }
-            .store(in: &subscriptions)
+            .subscribeWithHanlders(cancellables: &subscriptions, onError: { error in
+                self.state = .error(reason: "register user or request access code error: \(error)")
+            }) { accessCode in
+                self.phoneNumber = fullPhoneNumber
+                self.otp = accessCode
+                self.state = .inputtingAccessCode(phoneNumber: fullPhoneNumber, loading: false)
+            }
     }
     
     func getAndSaveAccessToken() {
@@ -72,16 +57,11 @@ class LoginViewModel : ObservableObject {
             self.state = .error(reason: "otp or phoneNumber is nil")
             return
         }
+        
         apiClient.getAccessToken(phoneNumber: phoneNumber, otp: otp.accessCode)
-            .sink { [weak self] receiveCompletion in
-                guard let self = self else { return }
-                switch receiveCompletion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    self.state = .error(reason: "get access token error: \(error)")
-                }
-            } receiveValue: { accessToken in
+            .subscribeWithHanlders(cancellables: &subscriptions, onError: { error in
+                self.state = .error(reason: "get access token error: \(error)")
+            }) { accessToken in
                 guard KeychainHelper.saveAccessToken(accessToken: accessToken.access_token) == true
                 else{
                     self.state = .error(reason: "failed to write token")
@@ -89,6 +69,5 @@ class LoginViewModel : ObservableObject {
                 }
                 self.state = .gotAccessToken
             }
-            .store(in: &self.subscriptions)
     }
 }

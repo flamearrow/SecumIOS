@@ -41,6 +41,8 @@
 		229291412AAEABA5000C59FD /* CountryNumbers.json in Resources */ = {isa = PBXBuildFile; fileRef = 229291402AAEABA5000C59FD /* CountryNumbers.json */; };
 		229291432AAEAD7D000C59FD /* PhoneNumberCollectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291422AAEAD7D000C59FD /* PhoneNumberCollectorView.swift */; };
 		229291452AAEB353000C59FD /* Views+Secum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291442AAEB353000C59FD /* Views+Secum.swift */; };
+		22B4F8A62ADC8ABE008D0801 /* Publisher+Secum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8A52ADC8ABE008D0801 /* Publisher+Secum.swift */; };
+		22B4F8A92ADC9A7C008D0801 /* LogConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8A82ADC9A7C008D0801 /* LogConstants.swift */; };
 		22F430AB2A492A1C004ED9B1 /* Tora.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F430AA2A492A1C004ED9B1 /* Tora.swift */; };
 		22F430AD2A492D47004ED9B1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F430AC2A492D47004ED9B1 /* MapView.swift */; };
 /* End PBXBuildFile section */
@@ -99,6 +101,8 @@
 		229291402AAEABA5000C59FD /* CountryNumbers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryNumbers.json; sourceTree = "<group>"; };
 		229291422AAEAD7D000C59FD /* PhoneNumberCollectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCollectorView.swift; sourceTree = "<group>"; };
 		229291442AAEB353000C59FD /* Views+Secum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views+Secum.swift"; sourceTree = "<group>"; };
+		22B4F8A52ADC8ABE008D0801 /* Publisher+Secum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Secum.swift"; sourceTree = "<group>"; };
+		22B4F8A82ADC9A7C008D0801 /* LogConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogConstants.swift; sourceTree = "<group>"; };
 		22F430AA2A492A1C004ED9B1 /* Tora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tora.swift; sourceTree = "<group>"; };
 		22F430AC2A492D47004ED9B1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +158,7 @@
 		224BF1352A40E9D900B097A1 /* Secum */ = {
 			isa = PBXGroup;
 			children = (
+				22B4F8A72ADC9A6E008D0801 /* Utils */,
 				229166112AC158D80083625E /* ViewModels */,
 				2291660C2AC118910083625E /* Network */,
 				2292913A2AAEA544000C59FD /* Data */,
@@ -197,6 +202,7 @@
 				229166162AC2AC550083625E /* Model */,
 				2291660D2AC118AC0083625E /* SecumAPIClientProtocol.swift */,
 				2291660F2AC119180083625E /* SecumAPIClient.swift */,
+				22B4F8A52ADC8ABE008D0801 /* Publisher+Secum.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -259,6 +265,14 @@
 				220DFE572ADA0581001FF38F /* KeychainHelper.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		22B4F8A72ADC9A6E008D0801 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				22B4F8A82ADC9A7C008D0801 /* LogConstants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,10 +425,12 @@
 				229291242AAD2F6A000C59FD /* SplashView.swift in Sources */,
 				224BF1392A40E9D900B097A1 /* ContentView.swift in Sources */,
 				229291452AAEB353000C59FD /* Views+Secum.swift in Sources */,
+				22B4F8A92ADC9A7C008D0801 /* LogConstants.swift in Sources */,
 				229291262AAD346B000C59FD /* SampleView.swift in Sources */,
 				229166132AC15FFB0083625E /* ContentViewModel.swift in Sources */,
 				229166222ACA4E390083625E /* OTPCollectionView.swift in Sources */,
 				229166102AC119180083625E /* SecumAPIClient.swift in Sources */,
+				22B4F8A62ADC8ABE008D0801 /* Publisher+Secum.swift in Sources */,
 				229166152AC2A73D0083625E /* LoginViewModel.swift in Sources */,
 				2292913C2AAEA54D000C59FD /* CPData.swift in Sources */,
 				229291392AAEA501000C59FD /* PhoneNumberView.swift in Sources */,
