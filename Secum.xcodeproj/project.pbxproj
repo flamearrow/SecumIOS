@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2206033F2ADFA48C00D29D59 /* UserData+Secum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206033E2ADFA48C00D29D59 /* UserData+Secum.swift */; };
 		220DFE512AD38075001FF38F /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE502AD38075001FF38F /* LoadingButton.swift */; };
 		220DFE532AD3964B001FF38F /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE522AD3964B001FF38F /* KeyboardResponder.swift */; };
 		220DFE562ADA050A001FF38F /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 220DFE552ADA050A001FF38F /* SwiftKeychainWrapper */; };
@@ -43,6 +44,16 @@
 		229291452AAEB353000C59FD /* Views+Secum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229291442AAEB353000C59FD /* Views+Secum.swift */; };
 		22B4F8A62ADC8ABE008D0801 /* Publisher+Secum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8A52ADC8ABE008D0801 /* Publisher+Secum.swift */; };
 		22B4F8A92ADC9A7C008D0801 /* LogConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8A82ADC9A7C008D0801 /* LogConstants.swift */; };
+		22B4F8AB2ADCA48F008D0801 /* ContactInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8AA2ADCA48F008D0801 /* ContactInfos.swift */; };
+		22B4F8AD2ADCA4C3008D0801 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8AC2ADCA4C3008D0801 /* UserInfo.swift */; };
+		22B4F8AF2ADCA582008D0801 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8AE2ADCA582008D0801 /* MessageResponse.swift */; };
+		22B4F8B12ADCA94F008D0801 /* MessageGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8B02ADCA94F008D0801 /* MessageGroup.swift */; };
+		22B4F8B32ADCAA88008D0801 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8B22ADCAA88008D0801 /* Constants.swift */; };
+		22B4F8B52ADCC94A008D0801 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8B42ADCC94A008D0801 /* Message.swift */; };
+		22B4F8B82ADCC9F1008D0801 /* SecumCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8B62ADCC9F1008D0801 /* SecumCoreData.xcdatamodeld */; };
+		22B4F8BA2ADCCCC9008D0801 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8B92ADCCCC9008D0801 /* CoreDataRepository.swift */; };
+		22B4F8C42ADE4DE2008D0801 /* CodingUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8C32ADE4DE2008D0801 /* CodingUserInfoKey.swift */; };
+		22B4F8C62ADE590A008D0801 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F8C52ADE590A008D0801 /* PersistenceController.swift */; };
 		22F430AB2A492A1C004ED9B1 /* Tora.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F430AA2A492A1C004ED9B1 /* Tora.swift */; };
 		22F430AD2A492D47004ED9B1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F430AC2A492D47004ED9B1 /* MapView.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2206033E2ADFA48C00D29D59 /* UserData+Secum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+Secum.swift"; sourceTree = "<group>"; };
 		220DFE502AD38075001FF38F /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		220DFE522AD3964B001FF38F /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		220DFE572ADA0581001FF38F /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
@@ -103,6 +115,16 @@
 		229291442AAEB353000C59FD /* Views+Secum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views+Secum.swift"; sourceTree = "<group>"; };
 		22B4F8A52ADC8ABE008D0801 /* Publisher+Secum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Secum.swift"; sourceTree = "<group>"; };
 		22B4F8A82ADC9A7C008D0801 /* LogConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogConstants.swift; sourceTree = "<group>"; };
+		22B4F8AA2ADCA48F008D0801 /* ContactInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfos.swift; sourceTree = "<group>"; };
+		22B4F8AC2ADCA4C3008D0801 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		22B4F8AE2ADCA582008D0801 /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
+		22B4F8B02ADCA94F008D0801 /* MessageGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageGroup.swift; sourceTree = "<group>"; };
+		22B4F8B22ADCAA88008D0801 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		22B4F8B42ADCC94A008D0801 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		22B4F8B72ADCC9F1008D0801 /* SecumCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SecumCoreData.xcdatamodel; sourceTree = "<group>"; };
+		22B4F8B92ADCCCC9008D0801 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
+		22B4F8C32ADE4DE2008D0801 /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
+		22B4F8C52ADE590A008D0801 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		22F430AA2A492A1C004ED9B1 /* Tora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tora.swift; sourceTree = "<group>"; };
 		22F430AC2A492D47004ED9B1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +180,7 @@
 		224BF1352A40E9D900B097A1 /* Secum */ = {
 			isa = PBXGroup;
 			children = (
+				22B4F8B62ADCC9F1008D0801 /* SecumCoreData.xcdatamodeld */,
 				22B4F8A72ADC9A6E008D0801 /* Utils */,
 				229166112AC158D80083625E /* ViewModels */,
 				2291660C2AC118910083625E /* Network */,
@@ -203,6 +226,7 @@
 				2291660D2AC118AC0083625E /* SecumAPIClientProtocol.swift */,
 				2291660F2AC119180083625E /* SecumAPIClient.swift */,
 				22B4F8A52ADC8ABE008D0801 /* Publisher+Secum.swift */,
+				22B4F8B22ADCAA88008D0801 /* Constants.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -224,6 +248,11 @@
 				2291661D2ACA38320083625E /* AccessCode.swift */,
 				2291661F2ACA41270083625E /* AccessToken.swift */,
 				220DFE592ADA1468001FF38F /* Profile.swift */,
+				22B4F8AA2ADCA48F008D0801 /* ContactInfos.swift */,
+				22B4F8AC2ADCA4C3008D0801 /* UserInfo.swift */,
+				22B4F8AE2ADCA582008D0801 /* MessageResponse.swift */,
+				22B4F8B02ADCA94F008D0801 /* MessageGroup.swift */,
+				22B4F8B42ADCC94A008D0801 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +292,10 @@
 				229291402AAEABA5000C59FD /* CountryNumbers.json */,
 				2292913B2AAEA54D000C59FD /* CPData.swift */,
 				220DFE572ADA0581001FF38F /* KeychainHelper.swift */,
+				22B4F8B92ADCCCC9008D0801 /* CoreDataRepository.swift */,
+				22B4F8C32ADE4DE2008D0801 /* CodingUserInfoKey.swift */,
+				22B4F8C52ADE590A008D0801 /* PersistenceController.swift */,
+				2206033E2ADFA48C00D29D59 /* UserData+Secum.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -417,18 +450,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				220DFE512AD38075001FF38F /* LoadingButton.swift in Sources */,
+				22B4F8B32ADCAA88008D0801 /* Constants.swift in Sources */,
 				22F430AB2A492A1C004ED9B1 /* Tora.swift in Sources */,
 				2292912B2AAD4635000C59FD /* Color+SecumColors.swift in Sources */,
 				229291432AAEAD7D000C59FD /* PhoneNumberCollectorView.swift in Sources */,
+				22B4F8AF2ADCA582008D0801 /* MessageResponse.swift in Sources */,
+				22B4F8BA2ADCCCC9008D0801 /* CoreDataRepository.swift in Sources */,
 				2291661C2ACA35AD0083625E /* LoggedInViewModel.swift in Sources */,
 				22F430AD2A492D47004ED9B1 /* MapView.swift in Sources */,
 				229291242AAD2F6A000C59FD /* SplashView.swift in Sources */,
+				22B4F8C42ADE4DE2008D0801 /* CodingUserInfoKey.swift in Sources */,
 				224BF1392A40E9D900B097A1 /* ContentView.swift in Sources */,
+				22B4F8AB2ADCA48F008D0801 /* ContactInfos.swift in Sources */,
 				229291452AAEB353000C59FD /* Views+Secum.swift in Sources */,
 				22B4F8A92ADC9A7C008D0801 /* LogConstants.swift in Sources */,
 				229291262AAD346B000C59FD /* SampleView.swift in Sources */,
+				2206033F2ADFA48C00D29D59 /* UserData+Secum.swift in Sources */,
+				22B4F8AD2ADCA4C3008D0801 /* UserInfo.swift in Sources */,
 				229166132AC15FFB0083625E /* ContentViewModel.swift in Sources */,
 				229166222ACA4E390083625E /* OTPCollectionView.swift in Sources */,
+				22B4F8B12ADCA94F008D0801 /* MessageGroup.swift in Sources */,
 				229166102AC119180083625E /* SecumAPIClient.swift in Sources */,
 				22B4F8A62ADC8ABE008D0801 /* Publisher+Secum.swift in Sources */,
 				229166152AC2A73D0083625E /* LoginViewModel.swift in Sources */,
@@ -438,12 +479,15 @@
 				229166182AC2AC630083625E /* User.swift in Sources */,
 				220DFE532AD3964B001FF38F /* KeyboardResponder.swift in Sources */,
 				2291661E2ACA38320083625E /* AccessCode.swift in Sources */,
+				22B4F8B52ADCC94A008D0801 /* Message.swift in Sources */,
 				2292912F2AAD4B90000C59FD /* Cathead.swift in Sources */,
 				220DFE582ADA0581001FF38F /* KeychainHelper.swift in Sources */,
 				2291661A2ACA35380083625E /* LoggedInView.swift in Sources */,
 				224BF1372A40E9D900B097A1 /* SecumApp.swift in Sources */,
 				2291660E2AC118AC0083625E /* SecumAPIClientProtocol.swift in Sources */,
 				220DFE5A2ADA1468001FF38F /* Profile.swift in Sources */,
+				22B4F8C62ADE590A008D0801 /* PersistenceController.swift in Sources */,
+				22B4F8B82ADCC9F1008D0801 /* SecumCoreData.xcdatamodeld in Sources */,
 				229166202ACA41270083625E /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -821,6 +865,19 @@
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		22B4F8B62ADCC9F1008D0801 /* SecumCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				22B4F8B72ADCC9F1008D0801 /* SecumCoreData.xcdatamodel */,
+			);
+			currentVersion = 22B4F8B72ADCC9F1008D0801 /* SecumCoreData.xcdatamodel */;
+			path = SecumCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 224BF12B2A40E9D900B097A1 /* Project object */;
 }

@@ -7,6 +7,8 @@
 
 import Foundation
 
+
 struct User : Codable, Equatable, Hashable {
     let userId: String
+    let nickname: String
 }

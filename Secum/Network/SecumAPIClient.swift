@@ -16,7 +16,7 @@ final class SecumAPIClient : SecumAPIClientProtocol {
     
     static let shared = SecumAPIClient()
     
-    static let logRaw: Bool = false
+    static let logRaw: Bool = true
     
     static let base_url = "https://meichinijiuchiquba.com"
     static let username = "AlRYzmz0UoFeByEsbo31OejN55prHGNcX6wBAo5Y"
@@ -29,6 +29,10 @@ final class SecumAPIClient : SecumAPIClientProtocol {
     static let path_reqesut_access_token = base_url.with(path: "/api/o/token/")
     static let path_get_profile = base_url.with(path: "/api/users/get_profile/")
     static let path_load_bot_chats = base_url.with(path: "/api/users/load_bot_chats/")
+    static let path_list_contacts = base_url.with(path: "/api/contacts/list_contact/")
+    static let path_send_msg = base_url.with(path: "/api/messages/send_msg/")
+    static let path_create_group = base_url.with(path: "/api/messages/create_grp/")
+    
     
     static let debug_access_token = "asdf"
     
@@ -102,12 +106,27 @@ final class SecumAPIClient : SecumAPIClientProtocol {
         )
     }
     
-    func listContacts() {
-        
+    func listContacts() -> AnyPublisher<ContactInfos, AFError> {
+        return get(path: SecumAPIClient.path_list_contacts)
     }
     
-    func sendMessage() {
-        
+    func sendMessage(groupID: String, text: String) -> AnyPublisher<MessageResponse, AFError> {
+        return post(
+            path: SecumAPIClient.path_send_msg,
+            params: [
+                "msg_grp_id": Int(groupID)!,
+                "text": text
+            ]
+        )
+    }
+    
+    func createGroup(peerUserID: String) -> AnyPublisher<MessageGroup, AFError> {
+        return post(
+            path: SecumAPIClient.path_create_group,
+            params: [
+                "user_ids": [Int(peerUserID)]
+            ]
+        )
     }
 }
 

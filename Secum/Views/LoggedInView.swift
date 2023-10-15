@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LoggedInView : View {
     
-    @ObservedObject var viewModel = LoggedInViewModel()
+    @StateObject var viewModel = LoggedInViewModel()
     
     var body: some View {
         
@@ -21,10 +21,21 @@ struct LoggedInView : View {
             }
         case .conversationPreview:
             Text("ConversationPreview")
-        case .contacts:
+            Button(action: {
+                viewModel.listContacts()
+            }) {
+                Text("listContacts")
+            }
+        case .contacts(let contacts):
             Text("Contacts")
-        case .conversationDetail(let peerId):
-            Text("ConversationDetail with peerId: \(peerId)")
+            List {
+                ForEach(contacts, id: \.userId) { user in
+                    Text(user.nickname)
+                }
+            }
+            
+        case .conversationDetail(let peerId, let groupId):
+            Text("ConversationDetail with peerId: \(peerId), groupID: \(groupId)")
         case .error(let reason):
             Text("Error! \(reason)")
         }

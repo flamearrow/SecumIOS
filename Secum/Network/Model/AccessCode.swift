@@ -10,4 +10,3 @@ import Foundation
 struct AccessCode: Codable, Equatable, Hashable {
     let accessCode: String
 }
-
