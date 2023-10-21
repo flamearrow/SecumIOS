@@ -18,9 +18,7 @@ class LoggedInViewModel : ObservableObject {
     private var subscriptions: Set<AnyCancellable> = []
     enum State: Equatable {
         case loadding
-        case conversationPreview
-        case contacts(contacts: [User])
-        case conversationDetail(peerId: String, groupId: String)
+        case loaded(currentuser: User)
         case error(reason: String)
     }
     
@@ -39,17 +37,10 @@ class LoggedInViewModel : ObservableObject {
                 self.user = profile.userInfo
                 _ = UserData.updateUserData(from: profile.userInfo)
                 return self.apiClient.loadBotChats()
+            }.flatMap { _ in
+                return self.apiClient.listContacts()
             }.subscribeWithHanlders(cancellables: &subscriptions, onError: { error in
-                self.state = .error(reason: "get profile or loadBotChats error: \(error)")
-            }) { _ in
-                self.state = .conversationPreview
-            }
-    }
-    
-    func listContacts() {
-        apiClient.listContacts()
-            .subscribeWithHanlders(cancellables: &subscriptions, onError: { error in
-                self.state = .error(reason: "listContacts error: \(error)")
+                self.state = .error(reason: "initilizeUser error: \(error)")
             }) { contacts in
                 guard let user = self.user else {
                     self.state = .error(reason: "self.user is nill in listContacts")
@@ -57,8 +48,7 @@ class LoggedInViewModel : ObservableObject {
                 }
                 let contacts: [User] = Array(contacts.contactInfos.map{$0.userInfo})
                 UserData.updateContacts(for: user, contacts: contacts)
-                
-                self.state = .contacts(contacts: contacts)
+                self.state = .loaded(currentuser: user)
             }
     }
 }

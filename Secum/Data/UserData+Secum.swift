@@ -11,20 +11,27 @@ import CoreData
 extension UserData {
     private static let logTag:String = "UserData"
     
-    static func fetchBy(userId: String) -> UserData? {
+    static func contactsRequest(owner: User) -> NSFetchRequest<UserData> {
+        let request = UserData.fetchRequest()
+        request.sortDescriptors = []
+        request.predicate = NSPredicate(format: "ANY isContactOf.userId == %@", owner.userId)
+        return request
+    }
+    
+    static func fetchBy(userId: String, context: NSManagedObjectContext = PersistenceController.shared.container.viewContext) -> UserData? {
         let request = UserData.fetchRequest()
         request.predicate = NSPredicate(format: "userId == %@", userId)
-
+        
         do {
-            return try PersistenceController.shared.container.viewContext.fetch(request).first
+            return try context.fetch(request).first
         } catch {
             fatalError("\(logTag) User.fetchAll failed!")
         }
     }
     
     /// Create a new UserData or update existing one based on userResponse
-    static func updateUserData(from userResponse: User, instantSave: Bool = true) -> UserData? {
-        let context = PersistenceController.shared.container.viewContext
+    static func updateUserData(from userResponse: User, instantSave: Bool = true,
+                               context: NSManagedObjectContext = PersistenceController.shared.container.viewContext) -> UserData? {
         let fetchRequest = UserData.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "userId == %@", userResponse.userId)
         
@@ -56,11 +63,10 @@ extension UserData {
     }
     
     /// Insert all contacts into UserData, then set them as the current user's contacts
-    static func updateContacts(for userResponse: User, contacts: [User]) {
+    static func updateContacts(for userResponse: User, contacts: [User], context: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
         guard !contacts.isEmpty else {
             return
         }
-        let context = PersistenceController.shared.container.viewContext
         
         guard let userData = UserData.fetchBy(userId: userResponse.userId) else {
             print("\(logTag) no userdata found for \(userResponse), create one first")
@@ -84,7 +90,7 @@ extension UserData {
         }
         
     }
-
+    
     func contactsArray() -> [User] {
         var contactsArray: [User] = []
         contacts?.forEach { contact in

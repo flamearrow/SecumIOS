@@ -15,3 +15,16 @@ struct NetworkConstants {
     static let midjourneyID: String = "18"
     static let midjourneyNickName: String = "Bot:phone_+6662"
 }
+
+extension String? {
+    func nickNameToBotName() -> String {
+        switch self {
+        case NetworkConstants.chatGPTNickName:
+            return NetworkConstants.chatGPT
+        case NetworkConstants.midjourneyNickName:
+            return NetworkConstants.midjourney
+        default:
+            return ""
+        }
+    }
+}

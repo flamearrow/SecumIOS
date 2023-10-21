@@ -12,6 +12,10 @@ struct SecumApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment( // This would ensure @FetchRequest used within knows which context to search for
+                    \.managedObjectContext,
+                     PersistenceController.shared.container.viewContext
+                )
         }
     }
 }

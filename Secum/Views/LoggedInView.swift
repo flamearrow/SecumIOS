@@ -12,6 +12,11 @@ struct LoggedInView : View {
     
     @StateObject var viewModel = LoggedInViewModel()
     
+    @State var selection = conversationPreviewTag
+    
+    static let conversationPreviewTag = 1
+    static let botsTag = 2
+    
     var body: some View {
         
         switch viewModel.state {
@@ -19,23 +24,21 @@ struct LoggedInView : View {
             ProgressView().onAppear{
                 viewModel.initializeUser()
             }
-        case .conversationPreview:
-            Text("ConversationPreview")
-            Button(action: {
-                viewModel.listContacts()
-            }) {
-                Text("listContacts")
+        case .loaded(let currentUser):
+            TabView(selection: $selection) {
+                ConversationPreview(owner: currentUser)
+                    .tabItem {
+                        Label(LocalizedStringKey("conversation"), systemImage: "message")
+                    }
+                    .tag(LoggedInView.conversationPreviewTag)
+                
+                ContactsView(owner: currentUser)
+                    .tabItem {
+                        Label(LocalizedStringKey("contacts"), systemImage: "person.3")
+                    }
+                    .tag(LoggedInView.conversationPreviewTag)
+                
             }
-        case .contacts(let contacts):
-            Text("Contacts")
-            List {
-                ForEach(contacts, id: \.userId) { user in
-                    Text(user.nickname)
-                }
-            }
-            
-        case .conversationDetail(let peerId, let groupId):
-            Text("ConversationDetail with peerId: \(peerId), groupID: \(groupId)")
         case .error(let reason):
             Text("Error! \(reason)")
         }
