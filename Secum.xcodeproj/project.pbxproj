@@ -11,6 +11,8 @@
 		2208CC9F2AE33096002F83F3 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CC9E2AE33096002F83F3 /* ContactsView.swift */; };
 		2208CCA12AE34BDF002F83F3 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CCA02AE34BDF002F83F3 /* ConversationView.swift */; };
 		2208CCA32AE34FDE002F83F3 /* ConversationPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CCA22AE34FDE002F83F3 /* ConversationPreview.swift */; };
+		2208CCA52AE46DA3002F83F3 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CCA42AE46DA3002F83F3 /* ConversationViewModel.swift */; };
+		2208CCA72AE4C960002F83F3 /* MessageData+Secum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CCA62AE4C960002F83F3 /* MessageData+Secum.swift */; };
 		220DFE512AD38075001FF38F /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE502AD38075001FF38F /* LoadingButton.swift */; };
 		220DFE532AD3964B001FF38F /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE522AD3964B001FF38F /* KeyboardResponder.swift */; };
 		220DFE562ADA050A001FF38F /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 220DFE552ADA050A001FF38F /* SwiftKeychainWrapper */; };
@@ -81,6 +83,8 @@
 		2208CC9E2AE33096002F83F3 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		2208CCA02AE34BDF002F83F3 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
 		2208CCA22AE34FDE002F83F3 /* ConversationPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationPreview.swift; sourceTree = "<group>"; };
+		2208CCA42AE46DA3002F83F3 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		2208CCA62AE4C960002F83F3 /* MessageData+Secum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageData+Secum.swift"; sourceTree = "<group>"; };
 		220DFE502AD38075001FF38F /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		220DFE522AD3964B001FF38F /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		220DFE572ADA0581001FF38F /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 				229166122AC15FFB0083625E /* ContentViewModel.swift */,
 				229166142AC2A73D0083625E /* LoginViewModel.swift */,
 				2291661B2ACA35AD0083625E /* LoggedInViewModel.swift */,
+				2208CCA42AE46DA3002F83F3 /* ConversationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				220DFE572ADA0581001FF38F /* KeychainHelper.swift */,
 				22B4F8C52ADE590A008D0801 /* PersistenceController.swift */,
 				2206033E2ADFA48C00D29D59 /* UserData+Secum.swift */,
+				2208CCA62AE4C960002F83F3 /* MessageData+Secum.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -459,11 +465,13 @@
 				229291432AAEAD7D000C59FD /* PhoneNumberCollectorView.swift in Sources */,
 				22B4F8AF2ADCA582008D0801 /* MessageResponse.swift in Sources */,
 				2291661C2ACA35AD0083625E /* LoggedInViewModel.swift in Sources */,
+				2208CCA52AE46DA3002F83F3 /* ConversationViewModel.swift in Sources */,
 				22F430AD2A492D47004ED9B1 /* MapView.swift in Sources */,
 				229291242AAD2F6A000C59FD /* SplashView.swift in Sources */,
 				224BF1392A40E9D900B097A1 /* ContentView.swift in Sources */,
 				22B4F8AB2ADCA48F008D0801 /* ContactInfos.swift in Sources */,
 				229291452AAEB353000C59FD /* Views+Secum.swift in Sources */,
+				2208CCA72AE4C960002F83F3 /* MessageData+Secum.swift in Sources */,
 				22B4F8A92ADC9A7C008D0801 /* LogConstants.swift in Sources */,
 				229291262AAD346B000C59FD /* SampleView.swift in Sources */,
 				2206033F2ADFA48C00D29D59 /* UserData+Secum.swift in Sources */,

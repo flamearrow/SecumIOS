@@ -30,7 +30,8 @@ struct ContactsView: View {
                             .frame(width: 50, height: 50)
                             .padding()
 
-                        Text(contact.nickname.nickNameToBotName())
+//                        Text(contact.nickname.nickNameToBotName())
+                        Text(contact.nickname!)
                     }
                 }
             }
