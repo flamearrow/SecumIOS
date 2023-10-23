@@ -81,7 +81,7 @@ struct ConversationView: View {
             
             HStack {
                 TextField("type something to send", text: $messageToSend)
-                Button("Send") {
+                Button(LocalizedStringKey("send")) {
                     viewModel.sendMessage(msg: messageToSend)
                     messageToSend = ""
                 }

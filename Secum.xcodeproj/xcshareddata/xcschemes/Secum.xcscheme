@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "224BF1322A40E9D900B097A1"
-               BuildableName = "Secum.app"
-               BlueprintName = "Secum"
+               BuildableName = "AI MARS.app"
+               BlueprintName = "AI MARS"
                ReferencedContainer = "container:Secum.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -68,8 +68,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "224BF1322A40E9D900B097A1"
-            BuildableName = "Secum.app"
-            BlueprintName = "Secum"
+            BuildableName = "AI MARS.app"
+            BlueprintName = "AI MARS"
             ReferencedContainer = "container:Secum.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "224BF1322A40E9D900B097A1"
-            BuildableName = "Secum.app"
-            BlueprintName = "Secum"
+            BuildableName = "AI MARS.app"
+            BlueprintName = "AI MARS"
             ReferencedContainer = "container:Secum.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

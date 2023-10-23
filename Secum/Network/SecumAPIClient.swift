@@ -16,7 +16,7 @@ final class SecumAPIClient : SecumAPIClientProtocol {
     
     static let shared = SecumAPIClient()
     
-    static let logRaw: Bool = false
+    static let logRaw: Bool = true
     
     static let base_url = "https://meichinijiuchiquba.com"
     static let username = "AlRYzmz0UoFeByEsbo31OejN55prHGNcX6wBAo5Y"

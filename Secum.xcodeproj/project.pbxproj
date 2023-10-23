@@ -96,7 +96,7 @@
 		220DFE522AD3964B001FF38F /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		220DFE572ADA0581001FF38F /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		220DFE592ADA1468001FF38F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		224BF1332A40E9D900B097A1 /* Secum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Secum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		224BF1332A40E9D900B097A1 /* AI MARS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI MARS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		224BF1362A40E9D900B097A1 /* SecumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecumApp.swift; sourceTree = "<group>"; };
 		224BF1382A40E9D900B097A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		224BF13A2A40E9DB00B097A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 		224BF1342A40E9D900B097A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				224BF1332A40E9D900B097A1 /* Secum.app */,
+				224BF1332A40E9D900B097A1 /* AI MARS.app */,
 				224BF1432A40E9DB00B097A1 /* SecumTests.xctest */,
 				224BF14D2A40E9DB00B097A1 /* SecumUITests.xctest */,
 			);
@@ -331,9 +331,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		224BF1322A40E9D900B097A1 /* Secum */ = {
+		224BF1322A40E9D900B097A1 /* AI MARS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 224BF1572A40E9DB00B097A1 /* Build configuration list for PBXNativeTarget "Secum" */;
+			buildConfigurationList = 224BF1572A40E9DB00B097A1 /* Build configuration list for PBXNativeTarget "AI MARS" */;
 			buildPhases = (
 				224BF12F2A40E9D900B097A1 /* Sources */,
 				224BF1302A40E9D900B097A1 /* Frameworks */,
@@ -343,14 +343,14 @@
 			);
 			dependencies = (
 			);
-			name = Secum;
+			name = "AI MARS";
 			packageProductDependencies = (
 				2291660A2AC115E00083625E /* Alamofire */,
 				220DFE552ADA050A001FF38F /* SwiftKeychainWrapper */,
 				2208CCA92AE5CDD5002F83F3 /* PubNub */,
 			);
 			productName = Secum;
-			productReference = 224BF1332A40E9D900B097A1 /* Secum.app */;
+			productReference = 224BF1332A40E9D900B097A1 /* AI MARS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		224BF1422A40E9DB00B097A1 /* SecumTests */ = {
@@ -431,7 +431,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				224BF1322A40E9D900B097A1 /* Secum */,
+				224BF1322A40E9D900B097A1 /* AI MARS */,
 				224BF1422A40E9DB00B097A1 /* SecumTests */,
 				224BF14C2A40E9DB00B097A1 /* SecumUITests */,
 			);
@@ -542,12 +542,12 @@
 /* Begin PBXTargetDependency section */
 		224BF1452A40E9DB00B097A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 224BF1322A40E9D900B097A1 /* Secum */;
+			target = 224BF1322A40E9D900B097A1 /* AI MARS */;
 			targetProxy = 224BF1442A40E9DB00B097A1 /* PBXContainerItemProxy */;
 		};
 		224BF14F2A40E9DB00B097A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 224BF1322A40E9D900B097A1 /* Secum */;
+			target = 224BF1322A40E9D900B097A1 /* AI MARS */;
 			targetProxy = 224BF14E2A40E9DB00B097A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -837,7 +837,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		224BF1572A40E9DB00B097A1 /* Build configuration list for PBXNativeTarget "Secum" */ = {
+		224BF1572A40E9DB00B097A1 /* Build configuration list for PBXNativeTarget "AI MARS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				224BF1582A40E9DB00B097A1 /* Debug */,
