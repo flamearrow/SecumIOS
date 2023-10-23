@@ -9,9 +9,6 @@ import Foundation
 import SwiftUI
 
 struct ConversationView: View {
-    
-    let owner: User
-    
     @Binding var shouldShowTabBar: Bool
     @ObservedObject var viewModel:ConversationViewModel
     
@@ -20,12 +17,10 @@ struct ConversationView: View {
     @FetchRequest var messages: FetchedResults<MessageData>
     
     init(owner: User, peerId: String,  shouldShowTabBar: Binding<Bool>) {
-        self.owner = owner
         self._shouldShowTabBar = shouldShowTabBar
-        self.viewModel = ConversationViewModel(peerId: peerId)
+        self.viewModel = ConversationViewModel(ownerId: owner.userId, peerId: peerId)
         self._messages = FetchRequest(fetchRequest: owner.messagesWith(peerId: peerId))
         viewModel.createGroup()
-        // should also subscribe to channel owner.userId
     }
     
     var body: some View {
@@ -83,7 +78,9 @@ struct ConversationView: View {
                 TextField("type something to send", text: $messageToSend)
                 Button("Send") {
                     viewModel.sendMessage(msg: messageToSend)
+                    messageToSend = ""
                 }
+                
             }.padding()
         }
     }

@@ -13,6 +13,9 @@
 		2208CCA32AE34FDE002F83F3 /* ConversationPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CCA22AE34FDE002F83F3 /* ConversationPreview.swift */; };
 		2208CCA52AE46DA3002F83F3 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CCA42AE46DA3002F83F3 /* ConversationViewModel.swift */; };
 		2208CCA72AE4C960002F83F3 /* MessageData+Secum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CCA62AE4C960002F83F3 /* MessageData+Secum.swift */; };
+		2208CCAA2AE5CDD5002F83F3 /* PubNub in Frameworks */ = {isa = PBXBuildFile; productRef = 2208CCA92AE5CDD5002F83F3 /* PubNub */; };
+		2208CCAC2AE5CE2F002F83F3 /* PubNubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CCAB2AE5CE2F002F83F3 /* PubNubController.swift */; };
+		2208CCAE2AE5E56A002F83F3 /* PNMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CCAD2AE5E56A002F83F3 /* PNMessage.swift */; };
 		220DFE512AD38075001FF38F /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE502AD38075001FF38F /* LoadingButton.swift */; };
 		220DFE532AD3964B001FF38F /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE522AD3964B001FF38F /* KeyboardResponder.swift */; };
 		220DFE562ADA050A001FF38F /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 220DFE552ADA050A001FF38F /* SwiftKeychainWrapper */; };
@@ -85,6 +88,8 @@
 		2208CCA22AE34FDE002F83F3 /* ConversationPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationPreview.swift; sourceTree = "<group>"; };
 		2208CCA42AE46DA3002F83F3 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		2208CCA62AE4C960002F83F3 /* MessageData+Secum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageData+Secum.swift"; sourceTree = "<group>"; };
+		2208CCAB2AE5CE2F002F83F3 /* PubNubController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubNubController.swift; sourceTree = "<group>"; };
+		2208CCAD2AE5E56A002F83F3 /* PNMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNMessage.swift; sourceTree = "<group>"; };
 		220DFE502AD38075001FF38F /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		220DFE522AD3964B001FF38F /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		220DFE572ADA0581001FF38F /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
@@ -142,6 +147,7 @@
 			files = (
 				220DFE562ADA050A001FF38F /* SwiftKeychainWrapper in Frameworks */,
 				2291660B2AC115E00083625E /* Alamofire in Frameworks */,
+				2208CCAA2AE5CDD5002F83F3 /* PubNub in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +239,7 @@
 				2291660F2AC119180083625E /* SecumAPIClient.swift */,
 				22B4F8A52ADC8ABE008D0801 /* Publisher+Secum.swift */,
 				22B4F8B22ADCAA88008D0801 /* Constants.swift */,
+				2208CCAB2AE5CE2F002F83F3 /* PubNubController.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -305,6 +312,7 @@
 				22B4F8C52ADE590A008D0801 /* PersistenceController.swift */,
 				2206033E2ADFA48C00D29D59 /* UserData+Secum.swift */,
 				2208CCA62AE4C960002F83F3 /* MessageData+Secum.swift */,
+				2208CCAD2AE5E56A002F83F3 /* PNMessage.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -336,6 +344,7 @@
 			packageProductDependencies = (
 				2291660A2AC115E00083625E /* Alamofire */,
 				220DFE552ADA050A001FF38F /* SwiftKeychainWrapper */,
+				2208CCA92AE5CDD5002F83F3 /* PubNub */,
 			);
 			productName = Secum;
 			productReference = 224BF1332A40E9D900B097A1 /* Secum.app */;
@@ -413,6 +422,7 @@
 			packageReferences = (
 				229166092AC115E00083625E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				220DFE542ADA050A001FF38F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				2208CCA82AE5CDD5002F83F3 /* XCRemoteSwiftPackageReference "swift" */,
 			);
 			productRefGroup = 224BF1342A40E9D900B097A1 /* Products */;
 			projectDirPath = "";
@@ -467,6 +477,7 @@
 				2291661C2ACA35AD0083625E /* LoggedInViewModel.swift in Sources */,
 				2208CCA52AE46DA3002F83F3 /* ConversationViewModel.swift in Sources */,
 				22F430AD2A492D47004ED9B1 /* MapView.swift in Sources */,
+				2208CCAC2AE5CE2F002F83F3 /* PubNubController.swift in Sources */,
 				229291242AAD2F6A000C59FD /* SplashView.swift in Sources */,
 				224BF1392A40E9D900B097A1 /* ContentView.swift in Sources */,
 				22B4F8AB2ADCA48F008D0801 /* ContactInfos.swift in Sources */,
@@ -497,6 +508,7 @@
 				224BF1372A40E9D900B097A1 /* SecumApp.swift in Sources */,
 				2291660E2AC118AC0083625E /* SecumAPIClientProtocol.swift in Sources */,
 				220DFE5A2ADA1468001FF38F /* Profile.swift in Sources */,
+				2208CCAE2AE5E56A002F83F3 /* PNMessage.swift in Sources */,
 				22B4F8C62ADE590A008D0801 /* PersistenceController.swift in Sources */,
 				22B4F8B82ADCC9F1008D0801 /* SecumCoreData.xcdatamodeld in Sources */,
 				229166202ACA41270083625E /* AccessToken.swift in Sources */,
@@ -847,6 +859,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2208CCA82AE5CDD5002F83F3 /* XCRemoteSwiftPackageReference "swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pubnub/swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
 		220DFE542ADA050A001FF38F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
@@ -866,6 +886,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2208CCA92AE5CDD5002F83F3 /* PubNub */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2208CCA82AE5CDD5002F83F3 /* XCRemoteSwiftPackageReference "swift" */;
+			productName = PubNub;
+		};
 		220DFE552ADA050A001FF38F /* SwiftKeychainWrapper */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 220DFE542ADA050A001FF38F /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;

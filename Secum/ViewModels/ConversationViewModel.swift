@@ -11,6 +11,7 @@ import Combine
 
 class ConversationViewModel : ObservableObject {
     @Published var state: State = .loading
+    @Published var groupId: String = ""
     
     enum State {
         case loading
@@ -20,11 +21,10 @@ class ConversationViewModel : ObservableObject {
     
     private let apiClient: SecumAPIClientProtocol
     private let peerId: String
-    private var groupId: String?
     
     private var subscriptions: Set<AnyCancellable> = []
     
-    init(peerId: String) {
+    init(ownerId: String, peerId: String) {
         apiClient = SecumAPIClient.shared
         self.peerId = peerId
     }
@@ -43,10 +43,10 @@ class ConversationViewModel : ObservableObject {
     }
     
     func sendMessage(msg: String) {
-        guard let groupId = self.groupId else {
-            self.state = .error(reason: "self group id is nil")
-            return
-        }
+//        guard let groupId = self.groupId else {
+//            self.state = .error(reason: "self group id is nil")
+//            return
+//        }
         apiClient.sendMessage(
             groupID: groupId,
             text: msg
