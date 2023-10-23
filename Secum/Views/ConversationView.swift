@@ -47,28 +47,36 @@ struct ConversationView: View {
     private func chatView() -> some View {
         VStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 10) {
-                    ForEach(messages, id: \.time) { message in
-                        HStack {
-                            if message.isFromOwner() {
-                                Spacer()
-                                messageContent(message)
-                                Image("cathead")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 35, height: 35)
-                            } else {
-                                Image("botIcon")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 35, height: 35)
-                                messageContent(message)
-                                Spacer()
+                ScrollViewReader { proxy in
+                    VStack(alignment: .leading, spacing: 10) {
+                        ForEach(messages, id: \.time) { message in
+                            HStack {
+                                if message.isFromOwner() {
+                                    Spacer()
+                                    messageContent(message)
+                                    Image("cathead")
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 35, height: 35)
+                                } else {
+                                    Image("botIcon")
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 35, height: 35)
+                                    messageContent(message)
+                                    Spacer()
+                                }
                             }
                         }
                     }
+                    .padding()
+                    .onAppear {
+                        scrollToBottom(proxy: proxy)
+                    }
+                    .onChange(of: messages.last?.messageId) { _ in
+                        scrollToBottom(proxy: proxy)
+                    }
                 }
-                .padding()
             }
             
             HStack {
@@ -79,6 +87,17 @@ struct ConversationView: View {
                 }
                 
             }.padding()
+        }.onTapGesture {
+            hideKeyboard()
+        }
+    }
+    
+    private func scrollToBottom(proxy: ScrollViewProxy) {
+        if let lastMessage = messages.last {
+            print("BGLM - scrolling to bottom")
+            withAnimation {
+                proxy.scrollTo(lastMessage.time, anchor: .bottom)
+            }
         }
     }
     
