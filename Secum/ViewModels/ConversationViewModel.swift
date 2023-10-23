@@ -10,11 +10,10 @@ import Combine
 
 
 class ConversationViewModel : ObservableObject {
-    @Published var state: State = .loading
-    @Published var groupId: String = ""
+    @Published var state: State = .loaded
+    let groupId: String
     
     enum State {
-        case loading
         case loaded
         case error(reason: String)
     }
@@ -26,27 +25,11 @@ class ConversationViewModel : ObservableObject {
     
     init(ownerId: String, peerId: String) {
         apiClient = SecumAPIClient.shared
+        self.groupId = GroupData.getGroupId(ownerId: ownerId, peerId: peerId)
         self.peerId = peerId
     }
     
-    func createGroup() {
-        apiClient
-            .createGroup(peerUserID: peerId)
-            .subscribeWithHanlders(
-                cancellables: &subscriptions
-            ) { error in
-                self.state = .error(reason: "failed to create group with peer \(self.peerId)")
-            } onSuccess: { [weak self] messageGroup in
-                self?.groupId = messageGroup.msgGrpId
-                self?.state = .loaded
-            }
-    }
-    
     func sendMessage(msg: String) {
-//        guard let groupId = self.groupId else {
-//            self.state = .error(reason: "self group id is nil")
-//            return
-//        }
         apiClient.sendMessage(
             groupID: groupId,
             text: msg

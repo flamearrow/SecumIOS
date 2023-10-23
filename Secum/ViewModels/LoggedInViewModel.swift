@@ -46,11 +46,34 @@ class LoggedInViewModel : ObservableObject {
                     self.state = .error(reason: "self.user is nill in listContacts")
                     return
                 }
-                let contacts: [User] = Array(contacts.contactInfos.map{$0.userInfo})
-                UserData.updateContacts(for: user, contacts: contacts)
                 
-                PubNubController.shared.subscribe(channel: user.userId)
-                self.state = .loaded(currentuser: user)
+                let dispatchGroup = DispatchGroup()
+            
+                contacts.contactInfos.forEach { contact in
+                    dispatchGroup.enter()
+                    self.apiClient.createGroup(peerUserID: contact.userInfo.userId)
+                        .subscribeWithHanlders(
+                            cancellables: &self.subscriptions
+                        ) { error in
+                            dispatchGroup.leave()
+                            self.state = .error(reason: "failed to create group with \(contact.userInfo.userId) with error \(error)")
+                        } onSuccess: { group in
+                            dispatchGroup.leave()
+                            // insert group
+                            GroupData.updateGroupData(
+                                msgGrpId: group.msgGrpId, ownerId: user.userId, peerId: contact.userInfo.userId
+                            )
+                        }
+                }
+                
+                // wait for all contact group inserted
+                dispatchGroup.notify(queue: .main) {
+                    let contacts: [User] = Array(contacts.contactInfos.map{$0.userInfo})
+                    UserData.updateContacts(for: user, contacts: contacts)
+                    
+                    PubNubController.shared.subscribe(channel: user.userId)
+                    self.state = .loaded(currentuser: user)
+                }
             }
     }
 }

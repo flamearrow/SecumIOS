@@ -16,6 +16,7 @@
 		2208CCAA2AE5CDD5002F83F3 /* PubNub in Frameworks */ = {isa = PBXBuildFile; productRef = 2208CCA92AE5CDD5002F83F3 /* PubNub */; };
 		2208CCAC2AE5CE2F002F83F3 /* PubNubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CCAB2AE5CE2F002F83F3 /* PubNubController.swift */; };
 		2208CCAE2AE5E56A002F83F3 /* PNMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CCAD2AE5E56A002F83F3 /* PNMessage.swift */; };
+		2208CCB02AE5FD4A002F83F3 /* GroupData+Secum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CCAF2AE5FD4A002F83F3 /* GroupData+Secum.swift */; };
 		220DFE512AD38075001FF38F /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE502AD38075001FF38F /* LoadingButton.swift */; };
 		220DFE532AD3964B001FF38F /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DFE522AD3964B001FF38F /* KeyboardResponder.swift */; };
 		220DFE562ADA050A001FF38F /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 220DFE552ADA050A001FF38F /* SwiftKeychainWrapper */; };
@@ -90,6 +91,7 @@
 		2208CCA62AE4C960002F83F3 /* MessageData+Secum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageData+Secum.swift"; sourceTree = "<group>"; };
 		2208CCAB2AE5CE2F002F83F3 /* PubNubController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubNubController.swift; sourceTree = "<group>"; };
 		2208CCAD2AE5E56A002F83F3 /* PNMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNMessage.swift; sourceTree = "<group>"; };
+		2208CCAF2AE5FD4A002F83F3 /* GroupData+Secum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupData+Secum.swift"; sourceTree = "<group>"; };
 		220DFE502AD38075001FF38F /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		220DFE522AD3964B001FF38F /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		220DFE572ADA0581001FF38F /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				2206033E2ADFA48C00D29D59 /* UserData+Secum.swift */,
 				2208CCA62AE4C960002F83F3 /* MessageData+Secum.swift */,
 				2208CCAD2AE5E56A002F83F3 /* PNMessage.swift */,
+				2208CCAF2AE5FD4A002F83F3 /* GroupData+Secum.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				229166182AC2AC630083625E /* User.swift in Sources */,
 				220DFE532AD3964B001FF38F /* KeyboardResponder.swift in Sources */,
 				2291661E2ACA38320083625E /* AccessCode.swift in Sources */,
+				2208CCB02AE5FD4A002F83F3 /* GroupData+Secum.swift in Sources */,
 				2208CCA32AE34FDE002F83F3 /* ConversationPreview.swift in Sources */,
 				22B4F8B52ADCC94A008D0801 /* Message.swift in Sources */,
 				2208CC9F2AE33096002F83F3 /* ContactsView.swift in Sources */,

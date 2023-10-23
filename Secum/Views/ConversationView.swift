@@ -20,13 +20,10 @@ struct ConversationView: View {
         self._shouldShowTabBar = shouldShowTabBar
         self.viewModel = ConversationViewModel(ownerId: owner.userId, peerId: peerId)
         self._messages = FetchRequest(fetchRequest: owner.messagesWith(peerId: peerId))
-        viewModel.createGroup()
     }
     
     var body: some View {
         switch viewModel.state {
-        case .loading:
-            ProgressView()
         case .loaded:
             chatView()
                 .onAppear {

@@ -17,6 +17,7 @@ struct User : Codable, Equatable, Hashable {
 
 extension User {
     func messagesWith(peerId: String, context: NSManagedObjectContext = PersistenceController.shared.container.viewContext) -> NSFetchRequest<MessageData> {
-        return MessageData.messages(ownerId: self.userId, peerId: peerId, context: context)
+        let msgGrpId = GroupData.getGroupId(ownerId: self.userId, peerId: peerId)
+        return MessageData.messages(groupId: msgGrpId)
     }
 }
