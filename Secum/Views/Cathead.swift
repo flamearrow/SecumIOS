@@ -34,3 +34,7 @@ struct Cathead : View {
         }
     }
 }
+
+#Preview {
+    Cathead(scale: 5)
+}
