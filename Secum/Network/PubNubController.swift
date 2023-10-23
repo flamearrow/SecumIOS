@@ -34,11 +34,42 @@ class PubNubController {
         pubnub.add(listener)
     }
     
-    func subscribe(channel: String) {
+    func subscribe(channel: String, since: Int64) {
         self.ownerId = channel
+        // +1 to not reteive the last one
+        retriveOldMessages(channel: channel, since: since + 1)
         pubnub.subscribe(to: [channel])
-        
     }
+    
+    private func retriveOldMessages(channel: String, since: Int64) {
+        // if since > 0 retrieve all messages we can get
+        doRetrieve(
+            channel: channel,
+            pnPage: PubNubBoundedPageBase(
+                end: UInt64(since)
+            )
+        )
+    }
+    
+    private func doRetrieve(channel: String, pnPage: PubNubBoundedPage?) {
+        if let pnPage = pnPage {
+            pubnub.fetchMessageHistory(
+                for: [channel],
+                page: pnPage
+            ) { result in
+                switch result {
+                case let .success(response):
+                    response.messagesByChannel[channel]?.forEach { oldMsg in
+                        MessageData.updateMessageData(ownerId: channel, from: oldMsg)
+                    }
+                    self.doRetrieve(channel: channel, pnPage: response.next)
+                case let .failure(error):
+                    print("Failed History Fetch Response: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+    
     
     private func onPnMessage(message: PubNubMessage) {
         guard let ownerId = self.ownerId else {

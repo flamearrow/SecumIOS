@@ -94,7 +94,6 @@ struct ConversationView: View {
     
     private func scrollToBottom(proxy: ScrollViewProxy) {
         if let lastMessage = messages.last {
-            print("BGLM - scrolling to bottom")
             withAnimation {
                 proxy.scrollTo(lastMessage.time, anchor: .bottom)
             }
