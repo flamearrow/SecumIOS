@@ -62,11 +62,42 @@ extension MessageData {
         return request
     }
     
+    static func messageOwnedBy(
+        owner: String,
+        context: NSManagedObjectContext = PersistenceController.shared.container.viewContext
+    ) -> NSFetchRequest<MessageData> {
+        let request = MessageData.fetchRequest()
+        if let ownerUser = UserData.fetchBy(userId: owner) {
+            request.sortDescriptors = [NSSortDescriptor(key: "time", ascending: true)]
+            request.predicate = NSPredicate(format: "owner = %@", ownerUser)
+            return request
+        } else {
+            fatalError("can't find ownerUser with \(owner)")
+        }
+    }
+    
+    func peerId() -> String {
+        if let groupData = GroupData.fetchBy(msgGrpId: self.groupId!) {
+            return groupData.peerId!
+        } else {
+            fatalError("failed to get peerId")
+        }
+    }
+    
+    func peerName() -> String {
+        if let groupData = GroupData.fetchBy(msgGrpId: self.groupId!) {
+            let peerUser = UserData.fetchBy(userId: groupData.peerId!)
+            return (peerUser?.nickname!)!
+        } else {
+            fatalError("failed to get peerId")
+        }
+    }
+    
     func isFromOwner() -> Bool {
         return self.owner == self.from
     }
     
-    static func lastLastTime(on channel: String, 
+    static func lastMessageTime(on channel: String, 
                              context: NSManagedObjectContext = PersistenceController.shared.container.viewContext) -> Int64 {
         guard let ownerUser = UserData.fetchBy(userId: channel)else {
             fatalError("can't find ownerUser with \(channel)")

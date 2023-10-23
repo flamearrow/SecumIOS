@@ -9,6 +9,18 @@ import Foundation
 import CoreData
 
 extension GroupData {
+    
+    static func fetchBy(msgGrpId: String, context: NSManagedObjectContext = PersistenceController.shared.container.viewContext) -> GroupData? {
+        let request = GroupData.fetchRequest()
+        request.predicate = NSPredicate(format: "msgGrpId == %@", msgGrpId)
+        
+        do {
+            return try context.fetch(request).first
+        } catch {
+            fatalError("GroupData User.fetchAll failed!")
+        }
+    }
+    
     static func updateGroupData(msgGrpId: String, ownerId: String, peerId: String, context: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
         let request = GroupData.fetchRequest()
         request.predicate = NSPredicate(format: "msgGrpId == %@", msgGrpId)

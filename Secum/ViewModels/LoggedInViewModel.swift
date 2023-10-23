@@ -71,7 +71,7 @@ class LoggedInViewModel : ObservableObject {
                     let contacts: [User] = Array(contacts.contactInfos.map{$0.userInfo})
                     UserData.updateContacts(for: user, contacts: contacts)
                     
-                    PubNubController.shared.subscribe(channel: user.userId, since: MessageData.lastLastTime(on: user.userId))
+                    PubNubController.shared.subscribe(channel: user.userId, since: MessageData.lastMessageTime(on: user.userId))
                     self.state = .loaded(currentuser: user)
                 }
             }
